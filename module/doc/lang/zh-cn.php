@@ -32,6 +32,16 @@ $lang->doc->editedDate     = '编辑时间';
 $lang->doc->basicInfo      = '基本信息';
 $lang->doc->deleted        = '已删除';
 
+//2015-10-14  添加
+$lang->doc->project_name        = '测试项目';
+$lang->doc->organization        = '测试机构';
+$lang->doc->money        = '优惠价格';
+$lang->doc->day        = '测试周期';
+$lang->doc->info        = '具体说明';
+$lang->doc->remark        = '备注';
+$lang->doc->add_user        = '编辑人员';
+$lang->doc->add_time        = '日期';
+
 $lang->doc->moduleDoc      = '按模块浏览';
 $lang->doc->searchDoc      = '搜索';
 //$lang->doc->allDoc         = '所有文档';

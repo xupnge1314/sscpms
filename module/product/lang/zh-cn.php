@@ -66,6 +66,24 @@ $lang->product->RD        = '发布负责人';
 $lang->product->acl       = '访问控制';
 $lang->product->whitelist = '分组白名单';
 
+//2015-10-14   添加
+$lang->product->customer     = '客户名称';
+$lang->product->project_name     = '测试项目';
+$lang->product->quote     = '报价金额';
+$lang->product->quote_time     = '报价时间';
+$lang->product->fare     = '目前进展';
+$lang->product->status1     = '状态';
+$lang->product->reason     = '未成交原因';
+$lang->product->cash_time     = '收款日期';
+$lang->product->invoice_time     = '开票日期';
+$lang->product->sample_time     = '收样时间';
+$lang->product->report_time     = '出报告时间';
+$lang->product->send_time     = '报告/退样/发票寄送时间';
+$lang->product->package_company     = '分包单位';
+$lang->product->package_money     = '分包金额';
+$lang->product->package_pay_time     = '分包付款日期';
+$lang->product->package_invoice_time     = '分包开票日期';
+
 $lang->product->moduleStory  = '按模块';
 $lang->product->searchStory  = '搜索';
 $lang->product->assignedToMe = '指派给我';

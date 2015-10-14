@@ -179,7 +179,7 @@ $lang->product->menu->plan    = array('link' => '计划|productplan|browse|produ
 $lang->product->menu->doc     = array('link' => '文档|product|doc|productID=%s', 'subModule' => 'doc');
 //$lang->product->menu->module  = '模块|tree|browse|productID=%s&view=story';
 $lang->product->menu->view    = array('link' => '概况|product|view|productID=%s', 'alias' => 'edit');
-$lang->product->menu->project = "{$lang->projectCommon}|product|project|status=all&productID=%s";
+//$lang->product->menu->project = "{$lang->projectCommon}|product|project|status=all&productID=%s";
 $lang->product->menu->create  = array('link' => "<i class='icon-plus'></i>&nbsp;添加{$lang->productCommon}|product|create", 'float' => 'right');
 $lang->product->menu->all     = array('link' => "<i class='icon-cubes'></i>&nbsp;所有{$lang->productCommon}|product|index|locate=no&productID=%s", 'float' => 'right');
 
@@ -262,7 +262,7 @@ $lang->company->menu->browseUser   = array('link' => '用户|company|browse', 's
 $lang->company->menu->dept         = array('link' => '部门|dept|browse', 'subModule' => 'dept');
 $lang->company->menu->browseGroup  = array('link' => '权限|group|browse', 'subModule' => 'group');
 $lang->company->menu->view         = array('link' => '公司|company|view', 'alias' => 'edit');
-$lang->company->menu->dynamic      = '动态|company|dynamic|';
+//$lang->company->menu->dynamic      = '动态|company|dynamic|';
 $lang->company->menu->addGroup     = array('link' => '<i class="icon-group"></i>&nbsp;添加分组|group|create', 'float' => 'right');
 $lang->company->menu->batchAddUser = array('link' => '<i class="icon-plus-sign"></i>&nbsp;批量添加|user|batchCreate|dept=%s', 'subModule' => 'user', 'float' => 'right');
 $lang->company->menu->addUser      = array('link' => '<i class="icon-plus"></i>&nbsp;添加用户|user|create|dept=%s', 'subModule' => 'user', 'float' => 'right');

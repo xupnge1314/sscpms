@@ -26,8 +26,8 @@
         <td class='w-p25-f'><?php echo html::input('name', '', "class='form-control'");?></td><td></td>
       </tr>  
       <tr>
-        <th><?php echo $lang->product->code;?></th>
-        <td><?php echo html::input('code', '', "class='form-control'");?></td><td></td>
+        <th><?php //echo $lang->product->code;?></th>
+        <td><?php //echo html::input('code', '', "class='form-control'");?></td><td></td>
       </tr>  
       <tr>
         <th><?php echo $lang->product->PO;?></th>
