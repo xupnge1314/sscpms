@@ -22,30 +22,65 @@
   </div>
   <form class='form-condensed' method='post' enctype='multipart/form-data' target='hiddenwin' id='dataform'>
     <table class='table table-form'> 
-      <?php if($libID == 'product'):?>
+      <?php //if($libID == 'product'):?><!-- 
       <tr>
-        <th class='w-80px'><?php echo $lang->doc->product;?></th>
-        <td class='w-p25-f'><?php echo html::select('product', $products, $productID, "class='form-control chosen'");?></td><td></td>
+        <th class='w-80px'><?php //echo $lang->doc->product;?></th>
+        <td class='w-p25-f'><?php //echo html::select('product', $products, $productID, "class='form-control chosen'");?></td><td></td>
       </tr>  
-      <?php elseif($libID == 'project'):?>
+      <?php //elseif($libID == 'project'):?>
       <tr>
         <th class='w-80px'><?php echo $lang->doc->project;?></th>
         <td class='w-p25-f'><?php echo html::select('project', $projects, $projectID, "class='form-control chosen' onchange=loadProducts(this.value)");?></td><td></td>
       </tr>  
       <tr>
-        <th><?php echo $lang->doc->product;?></th>
-        <td class='w-p25-f'><span id='productBox'><?php echo html::select('product', $products, '', "class='form-control chosen'");?></span></td><td></td>
-      </tr>  
-      <?php endif;?>
+        <th><?php //echo $lang->doc->product;?></th>
+        <td class='w-p25-f'><span id='productBox'><?php //echo html::select('product', $products, '', "class='form-control chosen'");?></span></td><td></td>
+      </tr>   -->
+      <?php //endif;?>
       <tr>
-        <th class='w-80px'><?php echo $lang->doc->module;?></th>
-        <td><?php echo html::select('module', $moduleOptionMenu, $moduleID, "class='form-control chosen'");?></td>
+        <th class='w-80px'><?php //echo $lang->doc->module;?></th>
+        <td><?php //echo html::select('module', $moduleOptionMenu, $moduleID, "class='form-control chosen'");?></td>
       </tr>  
-      <tr>
+      
+      <tr >
+        <th><?php echo $lang->doc->project_name;?></th>
+        <td colspan='2'><?php echo html::input('project_name', '', "class='form-control'");?></td>
+      </tr>  
+      <tr >
+        <th><?php echo $lang->doc->organization;?></th>
+        <td colspan='2'><?php echo html::input('organization', '', "class='form-control'");?></td>
+      </tr>  
+      <tr >
+        <th><?php echo $lang->doc->money;?></th>
+        <td colspan='2'><?php echo html::input('money', '', "class='form-control'");?></td>
+      </tr>  
+      <tr >
+        <th><?php echo $lang->doc->day;?></th>
+        <td colspan='2'><?php echo html::input('day', '', "class='form-control'");?></td>
+      </tr>  
+      <tr >
+        <th><?php echo $lang->doc->info;?></th>
+        <td colspan='2'><?php echo html::input('info', '', "class='form-control'");?></td>
+      </tr>  
+      <tr >
+        <th><?php echo $lang->doc->remark;?></th>
+        <td colspan='2'><?php echo html::input('remark', '', "class='form-control'");?></td>
+      </tr>  
+      <tr >
+        <th><?php echo $lang->doc->add_user;?></th>
+        <td colspan='2'><?php echo html::input('add_user', '', "class='form-control'");?></td>
+      </tr>  
+      <tr >
+        <th><?php echo $lang->doc->add_time;?></th>
+        <td colspan='2'><?php echo html::input('add_time', '', "class='form-control'");?></td>
+      </tr>  
+      
+      
+      <tr class='hidden'>
         <th><?php echo $lang->doc->type;?></th>
         <td colspan='2'><?php echo html::radio('type', $lang->doc->types, 'file', "onclick=setType(this.value)");?></td>
       </tr>  
-      <tr>
+      <tr class='hide'>
         <th><?php echo $lang->doc->title;?></th>
         <td colspan='2'><?php echo html::input('title', '', "class='form-control'");?></td>
       </tr> 
@@ -61,7 +96,7 @@
         <th><?php echo $lang->doc->keywords;?></th>
         <td colspan='2'><?php echo html::input('keywords', '', "class='form-control'");?></td>
       </tr>  
-      <tr>
+      <tr class='hide'>
         <th><?php echo $lang->doc->digest;?></th>
         <td colspan='2'><?php echo html::textarea('digest', '', "class='form-control' rows=3");?></td>
       </tr>  
