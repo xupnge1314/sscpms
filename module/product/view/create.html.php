@@ -22,30 +22,94 @@
   <form class='form-condensed' method='post' target='hiddenwin' id='dataform'>
     <table class='table table-form'> 
       <tr>
-        <th class='w-90px'><?php echo $lang->product->name;?></th>
-        <td class='w-p25-f'><?php echo html::input('name', '', "class='form-control'");?></td><td></td>
+        <th class='w-90px'><?php echo $lang->product->customer;?></th>
+        <td class='w-p25-f'><?php echo html::input('customer', '', "class='form-control'");?></td><td></td>
+      </tr>  
+      <tr>
+        <th class='w-90px'><?php echo $lang->product->project_name;?></th>
+        <td class='w-p25-f'><?php echo html::input('project_name', '', "class='form-control'");?></td><td></td>
+      </tr>  
+      <tr>
+        <th class='w-90px'><?php echo $lang->product->quote;?></th>
+        <td class='w-p25-f'><?php echo html::input('quote', '', "class='form-control'");?></td><td></td>
+      </tr>  
+      <tr>
+        <th class='w-90px'><?php echo $lang->product->quote_time;?></th>
+        <td class='w-p25-f'><?php echo html::input('quote_time', '', "class='form-control'");?></td><td></td>
+      </tr>  
+      <tr>
+        <th class='w-90px'><?php echo $lang->product->fare;?></th>
+        <td class='w-p25-f'><?php echo html::input('fare', '', "class='form-control'");?></td><td></td>
+      </tr>  
+      <tr>
+        <th class='w-90px'><?php echo $lang->product->status1;?></th>
+        <td class='w-p25-f'><?php echo html::input('status1', '', "class='form-control'");?></td><td></td>
+      </tr>  
+      <tr>
+        <th class='w-90px'><?php echo $lang->product->reason;?></th>
+        <td class='w-p25-f'><?php echo html::input('reason', '', "class='form-control'");?></td><td></td>
+      </tr>  
+      <tr>
+        <th class='w-90px'><?php echo $lang->product->cash_time;?></th>
+        <td class='w-p25-f'><?php echo html::input('cash_time', '', "class='form-control'");?></td><td></td>
+      </tr>  
+      <tr>
+        <th class='w-90px'><?php echo $lang->product->invoice_time;?></th>
+        <td class='w-p25-f'><?php echo html::input('invoice_time', '', "class='form-control'");?></td><td></td>
+      </tr>  
+      <tr>
+        <th class='w-90px'><?php echo $lang->product->sample_time;?></th>
+        <td class='w-p25-f'><?php echo html::input('sample_time', '', "class='form-control'");?></td><td></td>
+      </tr>  
+      <tr>
+        <th class='w-90px'><?php echo $lang->product->report_time;?></th>
+        <td class='w-p25-f'><?php echo html::input('report_time', '', "class='form-control'");?></td><td></td>
+      </tr>  
+      <tr>
+        <th class='w-90px'><?php echo $lang->product->send_time;?></th>
+        <td class='w-p25-f'><?php echo html::input('send_time', '', "class='form-control'");?></td><td></td>
+      </tr>  
+      <tr>
+        <th class='w-90px'><?php echo $lang->product->package_company;?></th>
+        <td class='w-p25-f'><?php echo html::input('package_company', '', "class='form-control'");?></td><td></td>
+      </tr>  
+      <tr>
+        <th class='w-90px'><?php echo $lang->product->package_money;?></th>
+        <td class='w-p25-f'><?php echo html::input('package_money', '', "class='form-control'");?></td><td></td>
+      </tr>  
+      <tr>
+        <th class='w-90px'><?php echo $lang->product->package_pay_time;?></th>
+        <td class='w-p25-f'><?php echo html::input('package_pay_time', '', "class='form-control'");?></td><td></td>
+      </tr>  
+      <tr>
+        <th class='w-90px'><?php echo $lang->product->package_invoice_time;?></th>
+        <td class='w-p25-f'><?php echo html::input('package_invoice_time', '', "class='form-control'");?></td><td></td>
+      </tr>  
+      <!-- <tr>
+        <th class='w-90px'><?php //echo $lang->product->name;?></th>
+        <td class='w-p25-f'><?php //echo html::input('name', '', "class='form-control'");?></td><td></td>
       </tr>  
       <tr>
         <th><?php //echo $lang->product->code;?></th>
         <td><?php //echo html::input('code', '', "class='form-control'");?></td><td></td>
       </tr>  
       <tr>
-        <th><?php echo $lang->product->PO;?></th>
-        <td><?php echo html::select('PO', $poUsers, $this->app->user->account, "class='form-control chosen'");?></td><td></td>
+        <th><?php //echo $lang->product->PO;?></th>
+        <td><?php //echo html::select('PO', $poUsers, $this->app->user->account, "class='form-control chosen'");?></td><td></td>
       </tr>  
       <tr>
-        <th><?php echo $lang->product->QD;?></th>
-        <td><?php echo html::select('QD', $qdUsers, '', "class='form-control chosen'");?></td><td></td>
+        <th><?php //echo $lang->product->QD;?></th>
+        <td><?php //echo html::select('QD', $qdUsers, '', "class='form-control chosen'");?></td><td></td>
       </tr>  
       <tr>
-        <th><?php echo $lang->product->RD;?></th>
-        <td><?php echo html::select('RD', $rdUsers, '', "class='form-control chosen'");?></td><td></td>
-      </tr>  
+        <th><?php //echo $lang->product->RD;?></th>
+        <td><?php //echo html::select('RD', $rdUsers, '', "class='form-control chosen'");?></td><td></td>
+      </tr>   -->
       <tr>
         <th><?php echo $lang->product->desc;?></th>
         <td colspan='2'><?php echo html::textarea('desc', '', "rows='8' class='form-control'");?></td>
       </tr>  
-      <tr>
+      <tr class='hidden'>
         <th><?php echo $lang->product->acl;?></th>
         <td colspan='2'><?php echo nl2br(html::radio('acl', $lang->product->aclList, 'open', "onclick='setWhite(this.value);'", 'block'));?></td>
       </tr>  

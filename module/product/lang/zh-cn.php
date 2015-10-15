@@ -60,9 +60,11 @@ $lang->product->code      = "{$lang->productCommon}代号";
 $lang->product->order     = '排序';
 $lang->product->status    = '状态';
 $lang->product->desc      = "{$lang->productCommon}描述";
-$lang->product->PO        = "{$lang->productCommon}负责人";
+//$lang->product->PO        = "{$lang->productCommon}负责人";
+$lang->product->PO        = "跟踪负责人";
 $lang->product->QD        = '测试负责人';
-$lang->product->RD        = '发布负责人';
+$lang->product->RD        = '编辑人';
+//$lang->product->RD        = '发布负责人';
 $lang->product->acl       = '访问控制';
 $lang->product->whitelist = '分组白名单';
 
