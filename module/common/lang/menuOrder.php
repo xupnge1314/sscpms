@@ -28,7 +28,7 @@ $lang->my->menuOrder[55] = 'changePassword';
 $lang->todo->menuOrder   = $lang->my->menuOrder;
 
 /* product menu order. */
-$lang->product->menuOrder[5]  = 'story';
+//$lang->product->menuOrder[5]  = 'story';
 $lang->product->menuOrder[10] = 'dynamic';
 $lang->product->menuOrder[15] = 'plan';
 //$lang->product->menuOrder[20] = 'release';
@@ -40,7 +40,7 @@ $lang->product->menuOrder[45] = 'view';
 $lang->product->menuOrder[50] = 'order';
 $lang->product->menuOrder[55] = 'create';
 $lang->product->menuOrder[60] = 'all';
-$lang->story->menuOrder       = $lang->product->menuOrder;
+//$lang->story->menuOrder       = $lang->product->menuOrder;
 $lang->productplan->menuOrder = $lang->product->menuOrder;
 $lang->release->menuOrder     = $lang->product->menuOrder;
 

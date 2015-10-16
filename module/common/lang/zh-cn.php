@@ -171,7 +171,7 @@ $lang->product = new stdclass();
 $lang->product->menu = new stdclass();
 
 $lang->product->menu->list    = '%s';
-$lang->product->menu->story   = array('link' => '需求|product|browse|productID=%s', 'alias' => 'batchedit', 'subModule' => 'story');
+//$lang->product->menu->story   = array('link' => '需求|product|browse|productID=%s', 'alias' => 'batchedit', 'subModule' => 'story');
 $lang->product->menu->dynamic = '动态|product|dynamic|productID=%s';
 $lang->product->menu->plan    = array('link' => '计划|productplan|browse|productID=%s', 'subModule' => 'productplan');
 //$lang->product->menu->release = array('link' => '发布|release|browse|productID=%s',     'subModule' => 'release');
@@ -183,11 +183,11 @@ $lang->product->menu->view    = array('link' => '概况|product|view|productID=%
 $lang->product->menu->create  = array('link' => "<i class='icon-plus'></i>&nbsp;添加{$lang->productCommon}|product|create", 'float' => 'right');
 $lang->product->menu->all     = array('link' => "<i class='icon-cubes'></i>&nbsp;所有{$lang->productCommon}|product|index|locate=no&productID=%s", 'float' => 'right');
 
-$lang->story       = new stdclass();
+//$lang->story       = new stdclass();
 $lang->productplan = new stdclass();
 $lang->release     = new stdclass();
 
-$lang->story->menu       = $lang->product->menu;
+//$lang->story->menu       = $lang->product->menu;
 $lang->productplan->menu = $lang->product->menu;
 $lang->release->menu     = $lang->product->menu;
 

@@ -26,7 +26,7 @@ var browseType = '<?php echo $browseType;?>';
     <?php common::printIcon('doc', 'create', "libID=$libID&moduleID=$moduleID&productID=$productID&projectID=$projectID&from=doc");?>
   </div>
   <div id='querybox' class='<?php if($browseType == 'bysearch') echo 'show';?>'></div>
-</div>
+</div><!-- 
 <div class='side' id='treebox'>
   <a class='side-handle' data-id='treebox'><i class='icon-caret-left'></i></a>
   <div class='side-body'>
@@ -41,7 +41,7 @@ var browseType = '<?php echo $browseType;?>';
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <div class='main'>
   <table class='table table-condensed table-hover table-striped tablesorter table-fixed' id='docList'>
     <thead>

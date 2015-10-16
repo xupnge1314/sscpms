@@ -53,7 +53,7 @@
     </div>
   </div>
   <div id='querybox' class='<?php if($browseType =='bysearch') echo 'show';?>'></div>
-</div>
+</div><!-- 
 <div class='side' id='treebox'>
   <a class='side-handle' data-id='productTree'><i class='icon-caret-left'></i></a>
   <div class='side-body'>
@@ -68,7 +68,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <div class='main'>
   <form method='post' id='productStoryForm'>
     <table class='table table-condensed table-hover table-striped tablesorter table-fixed' id='storyList'>
