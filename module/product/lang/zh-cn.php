@@ -72,6 +72,7 @@ $lang->product->whitelist = '分组白名单';
 $lang->product->customer     = '客户名称';
 $lang->product->project_name     = '测试项目';
 $lang->product->quote     = '报价金额';
+$lang->product->money     = '元';
 $lang->product->quote_time     = '报价时间';
 $lang->product->fare     = '目前进展';
 $lang->product->status1     = '状态';
@@ -85,6 +86,13 @@ $lang->product->package_company     = '分包单位';
 $lang->product->package_money     = '分包金额';
 $lang->product->package_pay_time     = '分包付款日期';
 $lang->product->package_invoice_time     = '分包开票日期';
+
+$lang->product->fareList['sprint']    = "短期$lang->productCommon";
+$lang->product->fareList['waterfall'] = "长期$lang->productCommon";
+$lang->product->fareList['ops']       = "运维$lang->productCommon";
+
+$lang->product->status1List['0']    = "未完成";
+$lang->product->status1List['1'] = "完成";
 
 $lang->product->moduleStory  = '按模块';
 $lang->product->searchStory  = '搜索';

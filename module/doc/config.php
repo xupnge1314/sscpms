@@ -13,7 +13,7 @@ $config->doc->create->requiredFields = 'title';
 $config->doc->edit->requiredFields   = 'title';
 
 $config->doc->editor = new stdclass();
-$config->doc->editor->create = array('id' => 'content', 'tools' => 'fullTools');
+$config->doc->editor->create = array('id' => 'content,info,remark', 'tools' => 'fullTools');
 $config->doc->editor->edit   = array('id' => 'content,digest,comment', 'tools' => 'fullTools');
 
 $config->doc->search['module']                   = 'doc';

@@ -11,7 +11,10 @@
  */
 ?>
 <?php include '../../common/view/header.html.php';?>
+<?php include '../../common/view/datepicker.html.php';?>
 <?php include '../../common/view/kindeditor.html.php';?>
+<?php js::import($jsRoot . 'misc/date.js');?>
+<?php js::set('holders', $lang->project->placeholder);?>
 <div class='container mw-1400px'>
   <div id='titlebar'>
     <div class='heading'>
@@ -31,19 +34,24 @@
       </tr>  
       <tr>
         <th class='w-90px'><?php echo $lang->product->quote;?></th>
-        <td class='w-p25-f'><?php echo html::input('quote', '', "class='form-control'");?></td><td></td>
+        <td class='w-p25-f'>
+        <div class='input-group'>
+          <?php echo html::input('quote', '', "class='form-control'");?>
+            <span class='input-group-addon'><?php echo $lang->product->money;?></span>
+          </div>
+        </td><td></td>
       </tr>  
       <tr>
         <th class='w-90px'><?php echo $lang->product->quote_time;?></th>
-        <td class='w-p25-f'><?php echo html::input('quote_time', '', "class='form-control'");?></td><td></td>
+        <td class='w-p25-f'><?php echo html::input('quote_time', '', "class='form-control form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->quote_time . "'");?></td><td></td>
       </tr>  
       <tr>
         <th class='w-90px'><?php echo $lang->product->fare;?></th>
-        <td class='w-p25-f'><?php echo html::input('fare', '', "class='form-control'");?></td><td></td>
+        <td class='w-p25-f'><?php echo html::select('fare', $lang->product->fareList, '', "class='form-control'");?></td><td></td>
       </tr>  
       <tr>
         <th class='w-90px'><?php echo $lang->product->status1;?></th>
-        <td class='w-p25-f'><?php echo html::input('status1', '', "class='form-control'");?></td><td></td>
+        <td class='w-p25-f'><?php echo html::select('status1', $lang->product->status1List, '', "class='form-control'");?></td><td></td>
       </tr>  
       <tr>
         <th class='w-90px'><?php echo $lang->product->reason;?></th>
@@ -51,23 +59,23 @@
       </tr>  
       <tr>
         <th class='w-90px'><?php echo $lang->product->cash_time;?></th>
-        <td class='w-p25-f'><?php echo html::input('cash_time', '', "class='form-control'");?></td><td></td>
+        <td class='w-p25-f'><?php echo html::input('cash_time', '', "class='form-control form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->cash_time . "'");?></td><td></td>
       </tr>  
       <tr>
         <th class='w-90px'><?php echo $lang->product->invoice_time;?></th>
-        <td class='w-p25-f'><?php echo html::input('invoice_time', '', "class='form-control'");?></td><td></td>
+        <td class='w-p25-f'><?php echo html::input('invoice_time', '', "class='form-control form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->invoice_time . "'");?></td><td></td>
       </tr>  
       <tr>
         <th class='w-90px'><?php echo $lang->product->sample_time;?></th>
-        <td class='w-p25-f'><?php echo html::input('sample_time', '', "class='form-control'");?></td><td></td>
+        <td class='w-p25-f'><?php echo html::input('sample_time', '', "class='form-control form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->sample_time . "'");?></td><td></td>
       </tr>  
       <tr>
         <th class='w-90px'><?php echo $lang->product->report_time;?></th>
-        <td class='w-p25-f'><?php echo html::input('report_time', '', "class='form-control'");?></td><td></td>
+        <td class='w-p25-f'><?php echo html::input('report_time', '', "class='form-control form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->report_time . "'");?></td><td></td>
       </tr>  
       <tr>
         <th class='w-90px'><?php echo $lang->product->send_time;?></th>
-        <td class='w-p25-f'><?php echo html::input('send_time', '', "class='form-control'");?></td><td></td>
+        <td class='w-p25-f'><?php echo html::input('send_time', '', "class='form-control form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->send_time . "'");?></td><td></td>
       </tr>  
       <tr>
         <th class='w-90px'><?php echo $lang->product->package_company;?></th>
@@ -75,15 +83,19 @@
       </tr>  
       <tr>
         <th class='w-90px'><?php echo $lang->product->package_money;?></th>
-        <td class='w-p25-f'><?php echo html::input('package_money', '', "class='form-control'");?></td><td></td>
+        <td><div class='input-group'>
+          <?php echo html::input('package_money', '', "class='form-control'");?>
+            <span class='input-group-addon'><?php echo $lang->product->money;?></span>
+          </div>
+        </td><td></td>
       </tr>  
       <tr>
         <th class='w-90px'><?php echo $lang->product->package_pay_time;?></th>
-        <td class='w-p25-f'><?php echo html::input('package_pay_time', '', "class='form-control'");?></td><td></td>
+        <td class='w-p25-f'><?php echo html::input('package_pay_time', '', "class='form-control form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->package_pay_time . "'");?></td><td></td>
       </tr>  
       <tr>
         <th class='w-90px'><?php echo $lang->product->package_invoice_time;?></th>
-        <td class='w-p25-f'><?php echo html::input('package_invoice_time', '', "class='form-control'");?></td><td></td>
+        <td class='w-p25-f'><?php echo html::input('package_invoice_time', '', "class='form-control form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->package_invoice_time . "'");?></td><td></td>
       </tr>  
       <!-- <tr>
         <th class='w-90px'><?php //echo $lang->product->name;?></th>
