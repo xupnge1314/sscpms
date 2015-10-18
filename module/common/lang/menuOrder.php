@@ -28,7 +28,7 @@ $lang->my->menuOrder[55] = 'changePassword';
 $lang->todo->menuOrder   = $lang->my->menuOrder;
 
 /* product menu order. */
-//$lang->product->menuOrder[5]  = 'story';
+$lang->product->menuOrder[5]  = 'story';
 $lang->product->menuOrder[10] = 'dynamic';
 $lang->product->menuOrder[15] = 'plan';
 //$lang->product->menuOrder[20] = 'release';

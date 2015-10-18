@@ -12,248 +12,118 @@
 ?>
 <?php include '../../common/view/header.html.php';?>
 <?php include '../../common/view/treeview.html.php';?>
+<?php js::set('confirmDelete', $lang->product->confirmDelete)?>
 <?php js::set('browseType', $browseType);?>
 <div id='featurebar'>
-  <ul class='nav'>
-    <li id='unclosedTab'>     <?php echo html::a($this->inlink('browse', "productID=$productID&browseType=unclosed"),     $lang->product->unclosed);?></li>
-    <li id='allstoryTab'>     <?php echo html::a($this->inlink('browse', "productID=$productID&browseType=allStory"),     $lang->product->allStory);?></li>
-    <li id='assignedtomeTab'> <?php echo html::a($this->inlink('browse', "productID=$productID&browseType=assignedtome"), $lang->product->assignedToMe);?></li>
-    <li id='openedbymeTab'>   <?php echo html::a($this->inlink('browse', "productID=$productID&browseType=openedByMe"),   $lang->product->openedByMe);?></li>
-    <li id='reviewedbymeTab'> <?php echo html::a($this->inlink('browse', "productID=$productID&browseType=reviewedByMe"), $lang->product->reviewedByMe);?></li>
-    <li id='closedbymeTab'>   <?php echo html::a($this->inlink('browse', "productID=$productID&browseType=closedByMe"),   $lang->product->closedByMe);?></li>
-    <li id='draftstoryTab'>   <?php echo html::a($this->inlink('browse', "productID=$productID&browseType=draftStory"),   $lang->product->draftStory);?></li>
-    <li id='activestoryTab'>  <?php echo html::a($this->inlink('browse', "productID=$productID&browseType=activeStory"),  $lang->product->activeStory);?></li>
-    <li id='changedstoryTab'> <?php echo html::a($this->inlink('browse', "productID=$productID&browseType=changedStory"), $lang->product->changedStory);?></li>
-    <li id='willcloseTab'>    <?php echo html::a($this->inlink('browse', "productID=$productID&browseType=willClose"),    $lang->product->willClose);?></li>
-    <li id='closedstoryTab'>  <?php echo html::a($this->inlink('browse', "productID=$productID&browseType=closedStory"),  $lang->product->closedStory);?></li>
-    <li id='bysearchTab'><a href='javascript:;'><i class='icon-search icon'></i> <?php echo $lang->product->searchStory;?></a></li>
-  </ul>
-  <div class='actions'>
-    <div class='btn-group'>
-      <div class='btn-group'>
-        <button type='button' class='btn btn-default dropdown-toggle' data-toggle='dropdown'>
-          <i class='icon-download-alt'></i> <?php echo $lang->export ?>
-          <span class='caret'></span>
-        </button>
-        <ul class='dropdown-menu' id='exportActionMenu'>
-        <?php 
-        $misc = common::hasPriv('story', 'export') ? "class='export'" : "class=disabled";
-        $link = common::hasPriv('story', 'export') ?  $this->createLink('story', 'export', "productID=$productID&orderBy=$orderBy") : '#';
-        echo "<li>" . html::a($link, $lang->story->export, '', $misc) . "</li>";
-        ?>
-        </ul>
-      </div>
-        <?php common::printIcon('story', 'report', "productID=$productID&browseType=$browseType&moduleID=$moduleID", '', 'button', 'bar-chart'); ?>
-    </div>
-    <div class='btn-group'>
-    <?php 
-    common::printIcon('story', 'batchCreate', "productID=$productID&moduleID=$moduleID", '', 'button', 'plus-sign');
-    common::printIcon('story', 'create', "productID=$productID&moduleID=$moduleID", '', 'button', 'plus'); 
-    ?>
-    </div>
-  </div>
   <div id='querybox' class='<?php if($browseType =='bysearch') echo 'show';?>'></div>
-</div><!-- 
-<div class='side' id='treebox'>
-  <a class='side-handle' data-id='productTree'><i class='icon-caret-left'></i></a>
-  <div class='side-body'>
-    <div class='panel panel-sm'>
-      <div class='panel-heading nobr'><?php echo html::icon($lang->icons['product']);?> <strong><?php echo $productName;?></strong></div>
-      <div class='panel-body'>
-        <?php echo $moduleTree;?>
-        <div class='text-right'>
-          <?php common::printLink('tree', 'browse', "rootID=$productID&view=story", $lang->tree->manage);?>
-          <?php common::printLink('tree', 'fix',    "root=$productID&type=story", $lang->tree->fix, 'hiddenwin');?>
-        </div>
-      </div>
+</div>
+<div class='main'>
+  <?php if(empty($productStats)):?>
+<div class='container mw-500px'>
+  <div class='alert'>
+    <i class='icon icon-info-sign'></i>
+    <div class='content'>
+      <h5><?php echo $lang->my->home->noProductsTip ?></h5>
+      <?php echo html::a($this->createLink('product', 'create'), "<i class='icon-plus'></i> " . $lang->my->home->createProduct,'', "class='btn btn-success'") ?>
     </div>
   </div>
-</div> -->
-<div class='main'>
-  <form method='post' id='productStoryForm'>
-    <table class='table table-condensed table-hover table-striped tablesorter table-fixed' id='storyList'>
-      <thead>
+</div>
+<?php else:?>
+<?php $canOrder = (common::hasPriv('product', 'updateOrder') and strpos($orderBy, 'order') !== false)?>
+<form method='post' action='<?php echo inLink('batchEdit', "productID=$productID");?>'>
+  <table class='table table-condensed table-hover table-striped tablesorter'>
+    <?php $vars = "locate=no&productID=$productID&status=$status&orderBy=%s&recTotal={$pager->recTotal}&recPerPage={$pager->recPerPage}&pageID={$pager->pageID}";?>
+    <thead>
       <tr>
-        <?php $vars = "productID=$productID&browseType=$browseType&param=$moduleID&orderBy=%s&recTotal={$pager->recTotal}&recPerPage={$pager->recPerPage}";?>
-        <th class='w-id'>  <?php common::printOrderLink('id',         $orderBy, $vars, $lang->idAB);?></th>
-        <th class='w-pri'> <?php common::printOrderLink('pri',        $orderBy, $vars, $lang->priAB);?></th>
-        <th class='w-p30'> <?php common::printOrderLink('title',      $orderBy, $vars, $lang->story->title);?></th>
-        <th>               <?php common::printOrderLink('plan',       $orderBy, $vars, $lang->story->planAB);?></th>
-        <th>               <?php common::printOrderLink('source',     $orderBy, $vars, $lang->story->source);?></th>
-        <th>               <?php common::printOrderLink('openedBy',   $orderBy, $vars, $lang->openedByAB);?></th>
-        <th>               <?php common::printOrderLink('assignedTo', $orderBy, $vars, $lang->assignedToAB);?></th>
-        <th class='w-hour'><?php common::printOrderLink('estimate',   $orderBy, $vars, $lang->story->estimateAB);?></th>
-        <th>               <?php common::printOrderLink('status',     $orderBy, $vars, $lang->statusAB);?></th>
-        <th>               <?php common::printOrderLink('stage',      $orderBy, $vars, $lang->story->stageAB);?></th>
-        <th class='w-140px {sorter:false}'><?php echo $lang->actions;?></th>
+        <th class='w-id'><?php echo $lang->idAB;?></th>
+        <th><?php echo $lang->product->name;?></th>
+        <th class='w-80px'><?php echo $lang->product->customer;?></th>
+        <th class='w-80px'><?php echo $lang->product->project_name;?></th>
+        <th class='w-80px'><?php echo $lang->product->quote;?></th>
+        <th class='w-80px'><?php echo $lang->product->quote_time;?></th>
+        <th class='w-80px'><?php echo $lang->product->fare;?></th>
+        <th class='w-80px'><?php echo $lang->product->status1;?></th>
+        <th class='w-80px'><?php echo $lang->product->reason;?></th>
+        <th class='w-80px'><?php echo $lang->product->cash_time;?></th>
+        <th class='w-80px'><?php echo $lang->product->invoice_time;?></th>
+        <th class='w-80px'><?php echo $lang->product->sample_time;?></th>
+        <th class='w-80px'><?php echo $lang->product->report_time;?></th>
+        <th class='w-80px'><?php echo $lang->product->send_time;?></th>
+        <th class='w-80px'><?php echo $lang->product->package_company;?></th>
+        <th class='w-80px'><?php echo $lang->product->package_money;?></th>
+        <th class='w-80px'><?php echo $lang->product->package_pay_time;?></th>
+        <th class='w-80px'><?php echo $lang->product->package_invoice_time;?></th>
+        <th class='w-100px '><?php echo $lang->actions;?></th>
+        <!-- 
+        <?php if($canOrder):?>
+        <th class='w-60px sort-default'><?php common::printOrderLink('order', '', $vars, $lang->product->updateOrder);?></th>
+        <?php endif;?>
+         -->
       </tr>
-      </thead>
-      <tbody>
-      <?php foreach($stories as $key => $story):?>
-      <?php
-      $viewLink = $this->createLink('story', 'view', "storyID=$story->id");
-      $canView  = common::hasPriv('story', 'view');
-      ?>
-      <tr class='text-center'>
-        <td class='text-left'>
-          <input type='checkbox' name='storyIDList[<?php echo $story->id;?>]' value='<?php echo $story->id;?>' /> 
-          <?php if($canView) echo html::a($viewLink, sprintf('%03d', $story->id)); else printf('%03d', $story->id);?>
+    </thead>
+    <?php $canBatchEdit = common::hasPriv('product', 'batchEdit'); ?>
+    <tbody class='sortable' id='productTableList'>
+      <?php foreach($productStats as $product):?>
+      <tr class='text-center' data-id='<?php echo $product->id ?>' data-order='<?php echo $product->code ?>'>
+        <td>
+          <?php if($canBatchEdit):?>
+          <input type='checkbox' name='productIDList[<?php echo $product->id;?>]' value='<?php echo $product->id;?>' /> 
+          <?php endif;?>
+          <?php echo html::a($this->createLink('product', 'view', 'product=' . $product->id), sprintf('%03d', $product->id));?>
         </td>
-        <td><span class='<?php echo 'pri' . zget($lang->story->priList, $story->pri, $story->pri);?>'><?php echo zget($lang->story->priList, $story->pri, $story->pri)?></span></td>
-        <td class='text-left' title="<?php echo $story->title?>"><nobr><?php echo html::a($viewLink, $story->title);?></nobr></td>
-        <td title="<?php echo $story->planTitle?>"><?php echo $story->planTitle;?></td>
-        <td><?php echo $lang->story->sourceList[$story->source];?></td>
-        <td><?php echo zget($users, $story->openedBy, $story->openedBy);?></td>
-        <td><?php echo zget($users, $story->assignedTo, $story->assignedTo);?></td>
-        <td><?php echo $story->estimate;?></td>
-        <td class='story-<?php echo $story->status;?>'><?php echo $lang->story->statusList[$story->status];?></td>
-        <td><?php echo $lang->story->stageList[$story->stage];?></td>
-        <td class='text-right'>
+        <td class='text-left' title='<?php echo $product->name?>'><?php echo html::a($this->createLink('product', 'view', 'product=' . $product->id), $product->name);?></td>
+        <td><?php echo $product->customer;?></td>
+        <td><?php echo $product->project_name;?></td>
+        <td><?php echo $product->quote;?></td>
+        <td><?php echo $product->quote_time;?></td>
+        <td><?php echo $product->fare;?></td>
+        <td><?php echo $product->status1;?></td>
+        <td><?php echo $product->reason;?></td>
+        <td><?php echo $product->cash_time;?></td>
+        <td><?php echo $product->invoice_time;?></td>
+        <td><?php echo $product->sample_time;?></td>
+        <td><?php echo $product->report_time;?></td>
+        <td><?php echo $product->send_time;?></td>
+        <td><?php echo $product->package_company;?></td>
+        <td><?php echo $product->package_money;?></td>
+        <td><?php echo $product->package_pay_time;?></td>
+        <td><?php echo $product->package_invoice_time;?></td>
+        <td>
           <?php 
-          $vars = "story={$story->id}";
-          common::printIcon('story', 'change',     $vars, $story, 'list', 'random');
-          common::printIcon('story', 'review',     $vars, $story, 'list', 'search');
-          common::printIcon('story', 'close',      $vars, $story, 'list', 'off', '', 'iframe', true);
-          common::printIcon('story', 'edit',       $vars, $story, 'list', 'pencil');
-          common::printIcon('story', 'createCase', "productID=$story->product&module=0&from=&param=0&$vars", $story, 'list', 'sitemap');
+          common::printIcon('product', 'edit', "product={$product->id}", '', 'list');
+          //common::printIcon('product', 'delete', $params, '', 'button', '', 'hiddenwin');
+          if(common::hasPriv('product', 'delete'))
+          {
+              $deleteURL = $this->createLink('product', 'delete', "productID=$product->id&confirm=yes");
+              echo html::a("javascript:ajaxDelete(\"$deleteURL\",\"productList\",confirmDelete)", '<i class="icon-remove"></i>', '', "class='btn-icon' title='{$lang->product->delete}'");
+          }
           ?>
         </td>
+        <!-- 
+        <?php if($canOrder):?>
+        <td class='sort-handler'><i class="icon icon-move"></i></td>
+        <?php endif;?>
+         -->
       </tr>
       <?php endforeach;?>
-      </tbody>
-      <tfoot>
+    </tbody>
+    <tfoot>
       <tr>
-        <td colspan='11'>
+        <td colspan='<?php echo $canOrder ? 12 : 11?>'>
           <div class='table-actions clearfix'>
-            <?php if(count($stories)):?>
-            <div class='btn-group'><?php echo html::selectButton();?></div>
-            <?php
-            $canBatchEdit  = common::hasPriv('story', 'batchEdit');
-            $disabled   = $canBatchEdit ? '' : "disabled='disabled'";
-            $actionLink = $this->createLink('story', 'batchEdit', "productID=$productID&projectID=0");
-            ?>
-            <div class='btn-group dropup'>
-              <?php echo html::commonButton($lang->edit, "onclick=\"setFormAction('$actionLink')\" $disabled");?>
-              <button type='button' class='btn dropdown-toggle' data-toggle='dropdown'><span class='caret'></span></button>
-              <ul class='dropdown-menu'>
-                <?php 
-                $class = "class='disabled'";
-
-                $canBatchClose = common::hasPriv('story', 'batchClose') && strtolower($browseType) != 'closedbyme' && strtolower($browseType) != 'closedstory';
-                $actionLink    = $this->createLink('story', 'batchClose', "productID=$productID&projectID=0");
-                $misc = $canBatchClose ? "onclick=\"setFormAction('$actionLink')\"" : $class;
-                echo "<li>" . html::a('#', $lang->close, '', $misc) . "</li>";
-
-                if(common::hasPriv('story', 'batchReview'))
-                {
-                    echo "<li class='dropdown-submenu'>";
-                    echo html::a('javascript:;', $lang->story->review, '', "id='reviewItem'");
-                    echo "<ul class='dropdown-menu'>";
-                    unset($lang->story->reviewResultList['']);
-                    unset($lang->story->reviewResultList['revert']);
-                    foreach($lang->story->reviewResultList as $key => $result)
-                    {
-                        $actionLink = $this->createLink('story', 'batchReview', "result=$key");
-                        if($key == 'reject')
-                        {
-                            echo "<li class='dropdown-submenu'>";
-                            echo html::a('#', $result, '', "id='rejectItem'");
-                            echo "<ul class='dropdown-menu'>";
-                            unset($lang->story->reasonList['']);
-                            unset($lang->story->reasonList['subdivided']);
-                            unset($lang->story->reasonList['duplicate']);
-
-                            foreach($lang->story->reasonList as $key => $reason)
-                            {
-                                $actionLink = $this->createLink('story', 'batchReview', "result=reject&reason=$key");
-                                echo "<li>";
-                                echo html::a('#', $reason, '', "onclick=\"setFormAction('$actionLink','hiddenwin')\"");
-                                echo "</li>";
-                            }
-                            echo '</ul></li>';
-                        }
-                        else
-                        {
-                          echo '<li>' . html::a('#', $result, '', "onclick=\"setFormAction('$actionLink','hiddenwin')\"") . '</li>';
-                        }
-                    }
-                    echo '</ul></li>';
-                }
-                else
-                {
-                    echo '<li>' . html::a('javascript:;', $lang->story->review,  '', $class) . '</li>';
-                }
-
-                if(common::hasPriv('story', 'batchChangePlan'))
-                {
-                    echo "<li class='dropdown-submenu'>";
-                    echo html::a('javascript:;', $lang->story->planAB, '', "id='planItem'");
-                    echo "<ul class='dropdown-menu'>";
-                    unset($plans['']);
-                    $plans = array(0 => $lang->null) + $plans;
-                    foreach($plans as $planID => $plan)
-                    {
-                        $actionLink = $this->createLink('story', 'batchChangePlan', "planID=$planID");
-                        echo "<li>" . html::a('#', $plan, '', "onclick=\"setFormAction('$actionLink','hiddenwin')\"") . "</li>";
-                    }
-                    echo '</ul></li>';
-                }
-                else
-                {
-                    echo '<li>' . html::a('javascript:;', $lang->story->planAB, '', $class) . '</li>';
-                }
-
-                if(common::hasPriv('story', 'batchChangeStage'))
-                {
-                    echo "<li class='dropdown-submenu'>";
-                    echo html::a('javascript:;', $lang->story->stageAB, '', "id='stageItem'");
-                    echo "<ul class='dropdown-menu'>";
-                    $lang->story->stageList[''] = $lang->null;
-                    foreach($lang->story->stageList as $key => $stage)
-                    {
-                        $actionLink = $this->createLink('story', 'batchChangeStage', "stage=$key");
-                        echo "<li>" . html::a('#', $stage, '', "onclick=\"setFormAction('$actionLink','hiddenwin')\"") . "</li>";
-                    }
-                    echo '</ul></li>';
-                }
-                else
-                {
-                    echo '<li>' . html::a('javascript:;', $lang->story->stageAB, '', $class) . '</li>';
-                }
-
-                if(common::hasPriv('story', 'batchAssignTo'))
-                {
-                      $withSearch = count($users) > 10;
-                      $actionLink = $this->createLink('story', 'batchAssignTo', "productID=$productID");
-                      echo html::select('assignedTo', $users, '', 'class="hidden"');
-                      echo "<li class='dropdown-submenu'>";
-                      echo html::a('javascript::', $lang->story->assignedTo, 'id="assignItem"');
-                      echo "<ul class='dropdown-menu assign-menu" . ($withSearch ? ' with-search':'') . "'>";
-                      foreach ($users as $key => $value)
-                      {
-                          if(empty($key)) continue;
-                          echo "<li class='option' data-key='$key'>" . html::a("javascript:$(\".table-actions #assignedTo\").val(\"$key\");setFormAction(\"$actionLink\")", $value, '', '') . '</li>';
-                      }
-                      if($withSearch) echo "<li class='assign-search'><div class='input-group input-group-sm'><input type='text' class='form-control' placeholder=''><span class='input-group-addon'><i class='icon-search'></i></span></div></li>";
-                      echo "</ul>";
-                      echo "</li>";
-                }
-                else
-                {
-                    echo '<li>' . html::a('javascript:;', $lang->story->assignedTo, '', $class) . '</li>';
-                }
-                ?>
-              </ul>
-            </div>
-            <?php endif; ?>
-            <div class='text'><?php echo $summary;?></div>
+            <?php //if($canBatchEdit and !empty($productStats)):?>
+            <?php //echo "<div class='btn-group'>" . html::selectButton() . '</div>';?>
+            <?php //echo html::submitButton($lang->product->batchEdit, '', '');?>
+            <?php //endif;?>
+            <?php if(!$canOrder and common::hasPriv('product', 'updateOrder')) echo html::a(inlink('index', "locate=no&productID=$productID&status=$status&order=order_desc&recTotal={$pager->recTotal}&recPerPage={$pager->recPerPage}&pageID={$pager->pageID}"), $lang->product->updateOrder, '' , "class='btn'");?>
           </div>
-          <?php $pager->show();?>
+          <div class='text-right'><?php $pager->show();?></div>
         </td>
       </tr>
-      </tfoot>
-    </table>
-  </form>
+    </tfoot>
+  </table>
+</form>
+<?php endif;?>
 </div>
 <script language='javascript'>
 $('#module<?php echo $moduleID;?>').addClass('active');

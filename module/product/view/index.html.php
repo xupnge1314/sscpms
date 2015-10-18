@@ -44,6 +44,23 @@
       <tr>
         <th class='w-id'><?php common::printOrderLink('id', $orderBy, $vars, $lang->idAB);?></th>
         <th><?php common::printOrderLink('name', $orderBy, $vars, $lang->product->name);?></th>
+        <th class='w-80px'><?php echo $lang->product->customer;?></th>
+        <th class='w-80px'><?php echo $lang->product->project_name;?></th>
+        <th class='w-80px'><?php echo $lang->product->quote;?></th>
+        <th class='w-80px'><?php echo $lang->product->quote_time;?></th>
+        <th class='w-80px'><?php echo $lang->product->fare;?></th>
+        <th class='w-80px'><?php echo $lang->product->status1;?></th>
+        <th class='w-80px'><?php echo $lang->product->reason;?></th>
+        <th class='w-80px'><?php echo $lang->product->cash_time;?></th>
+        <th class='w-80px'><?php echo $lang->product->invoice_time;?></th>
+        <th class='w-80px'><?php echo $lang->product->sample_time;?></th>
+        <th class='w-80px'><?php echo $lang->product->report_time;?></th>
+        <th class='w-80px'><?php echo $lang->product->send_time;?></th>
+        <th class='w-80px'><?php echo $lang->product->package_company;?></th>
+        <th class='w-80px'><?php echo $lang->product->package_money;?></th>
+        <th class='w-80px'><?php echo $lang->product->package_pay_time;?></th>
+        <th class='w-80px'><?php echo $lang->product->package_invoice_time;?></th>
+        <!-- 
         <th class='w-80px'><?php echo $lang->story->statusList['active']  . $lang->story->common;?></th>
         <th class='w-80px'><?php echo $lang->story->statusList['changed'] . $lang->story->common;?></th>
         <th class='w-80px'><?php echo $lang->story->statusList['draft']   . $lang->story->common;?></th>
@@ -53,6 +70,7 @@
         <th class='w-80px'><?php echo $lang->product->bugs;?></th>
         <th class='w-80px'><?php echo $lang->bug->unResolved;?></th>
         <th class='w-80px'><?php echo $lang->bug->assignToNull;?></th>
+         -->
         <?php if($canOrder):?>
         <th class='w-60px sort-default'><?php common::printOrderLink('order', $orderBy, $vars, $lang->product->updateOrder);?></th>
         <?php endif;?>
@@ -69,6 +87,24 @@
           <?php echo html::a($this->createLink('product', 'view', 'product=' . $product->id), sprintf('%03d', $product->id));?>
         </td>
         <td class='text-left' title='<?php echo $product->name?>'><?php echo html::a($this->createLink('product', 'view', 'product=' . $product->id), $product->name);?></td>
+        
+        <td><?php echo $product->customer;?></td>
+        <td><?php echo $product->project_name;?></td>
+        <td><?php echo $product->quote;?></td>
+        <td><?php echo $product->quote_time;?></td>
+        <td><?php echo $product->fare;?></td>
+        <td><?php echo $product->status1;?></td>
+        <td><?php echo $product->reason;?></td>
+        <td><?php echo $product->cash_time;?></td>
+        <td><?php echo $product->invoice_time;?></td>
+        <td><?php echo $product->sample_time;?></td>
+        <td><?php echo $product->report_time;?></td>
+        <td><?php echo $product->send_time;?></td>
+        <td><?php echo $product->package_company;?></td>
+        <td><?php echo $product->package_money;?></td>
+        <td><?php echo $product->package_pay_time;?></td>
+        <td><?php echo $product->package_invoice_time;?></td>
+        <!-- 
         <td><?php echo $product->stories['active']?></td>
         <td><?php echo $product->stories['changed']?></td>
         <td><?php echo $product->stories['draft']?></td>
@@ -78,6 +114,7 @@
         <td><?php echo $product->bugs?></td>
         <td><?php echo $product->unResolved;?></td>
         <td><?php echo $product->assignToNull;?></td>
+         -->
         <?php if($canOrder):?>
         <td class='sort-handler'><i class="icon icon-move"></i></td>
         <?php endif;?>

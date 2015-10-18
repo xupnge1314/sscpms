@@ -46,8 +46,8 @@
       </tr>  
       
       <tr >
-        <th><?php echo $lang->doc->project_name;?></th>
-        <td colspan='2'><?php echo html::input('project_name', '', "class='form-control'");?></td>
+        <th><?php echo $lang->doc->title;?></th>
+        <td colspan='2'><?php echo html::input('title', '', "class='form-control'");?></td>
       </tr>  
       <tr >
         <th><?php echo $lang->doc->organization;?></th>

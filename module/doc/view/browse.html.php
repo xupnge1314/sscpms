@@ -49,7 +49,18 @@ var browseType = '<?php echo $browseType;?>';
         <?php $vars = "libID=$libID&module=$moduleID&productID=$productID&projectID=$projectID&browseType=$browseType&param=$param&orderBy=%s&recTotal={$pager->recTotal}&recPerPage={$pager->recPerPage}";?>
         <th class='w-id'>   <?php common::printOrderLink('id',        $orderBy, $vars, $lang->idAB);?></th>
         <th>                <?php common::printOrderLink('title',     $orderBy, $vars, $lang->doc->title);?></th>
+        
+        <th>                <?php common::printOrderLink('organization',     $orderBy, $vars, $lang->doc->organization);?></th>
+        <th>                <?php common::printOrderLink('money',     $orderBy, $vars, $lang->doc->money);?></th>
+        <th>                <?php common::printOrderLink('day',     $orderBy, $vars, $lang->doc->day);?></th>
+        <th>                <?php common::printOrderLink('info',     $orderBy, $vars, $lang->doc->info);?></th>
+        <th>                <?php common::printOrderLink('remark',     $orderBy, $vars, $lang->doc->remark);?></th>
+        <th>                <?php echo $lang->doc->add_user;?></th>
+        <th>                <?php echo $lang->doc->add_time;?></th>
+        
+        <!-- 
         <th class='w-100px'><?php common::printOrderLink('type',      $orderBy, $vars, $lang->doc->type);?></th>
+         -->
         <th class='w-100px'><?php common::printOrderLink('addedBy',   $orderBy, $vars, $lang->doc->addedBy);?></th>
         <th class='w-120px'><?php common::printOrderLink('addedDate', $orderBy, $vars, $lang->doc->addedDate);?></th>
         <th class='w-100px {sorter:false}'><?php echo $lang->actions;?></th>
@@ -64,7 +75,18 @@ var browseType = '<?php echo $browseType;?>';
       <tr class='text-center'>
         <td><?php if($canView) echo html::a($viewLink, sprintf('%03d', $doc->id)); else printf('%03d', $doc->id);?></td>
         <td class='text-left' title="<?php echo $doc->title?>"><nobr><?php echo html::a($viewLink, $doc->title);?></nobr></td>
+        
+        <td class='text-left' title=""><?php echo $doc->organization?></td>
+        <td class='text-left' title=""><?php echo $doc->money?></td>
+        <td class='text-left' title=""><?php echo $doc->day?></td>
+        <td class='text-left' title=""><?php echo $doc->info?></td>
+        <td class='text-left' title=""><?php echo $doc->remark?></td>
+        <td class='text-left' title=""><?php echo $doc->add_user?></td>
+        <td class='text-left' title=""><?php echo $doc->add_time?></td>
+        
+        <!-- 
         <td><?php echo $lang->doc->types[$doc->type];?></td>
+         -->
         <td><?php isset($users[$doc->addedBy]) ? print($users[$doc->addedBy]) : print($doc->addedBy);?></td>
         <td><?php echo date("m-d H:i", strtotime($doc->addedDate));?></td>
         <td>

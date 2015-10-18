@@ -24,6 +24,10 @@
   </div>
   <form class='form-condensed' method='post' target='hiddenwin' id='dataform'>
     <table class='table table-form'> 
+    <tr>
+        <th class='w-90px'><?php echo $lang->product->name;?></th>
+        <td class='w-p25-f'><?php echo html::input('name', '', "class='form-control'");?></td><td></td>
+      </tr>
       <tr>
         <th class='w-90px'><?php echo $lang->product->customer;?></th>
         <td class='w-p25-f'><?php echo html::input('customer', '', "class='form-control'");?></td><td></td>
