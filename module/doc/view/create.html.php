@@ -45,7 +45,7 @@
       </tr>  
       <tr>
         <th><?php echo $lang->doc->type;?></th>
-        <td colspan='2'><?php echo html::radio('type', $lang->doc->types, 'file', "onclick=setType(this.value)");?></td>
+        <td colspan='2'><?php echo html::radio('type', $lang->doc->types, '0', "onclick=setType(this.value)");?></td>
       </tr>  
       <tr>
         <th><?php echo $lang->doc->title;?></th>

@@ -15,7 +15,7 @@
 <div id='titlebar'>
   <div class='heading'>
     <span class='prefix' title='DOC'><?php echo html::icon($lang->icons['doc']);?> <strong><?php echo $doc->id;?></strong></span>
-    <strong><?php echo $doc->title;?></strong>
+    <strong><?php echo $doc->project_name;?></strong>
     <?php if($doc->deleted):?>
     <span class='label label-danger'><?php echo $lang->doc->deleted;?></span>
     <?php endif; ?>
@@ -60,20 +60,70 @@
       <?php endif;?>
       <?php if($doc->type == 'text'):?>
       <fieldset>
-        <legend><?php echo $lang->doc->content;?></legend>
-        <div class='content'><?php echo $doc->content;?></div>
+        <legend><?php echo $lang->doc->info;?></legend>
+        <div class='content'><?php echo $doc->info;?></div>
       </fieldset>
       <?php endif;?>
       <div class='file-content'>
-        <?php if($doc->type == 'file'):?>
+      
+      <!-- 添加 2015-09-20  -->
+      <fieldset>
+        <legend><?php echo $lang->doc->basicInfo;?></legend>
+        <table class='table table-data table-condensed table-borderless'>
+         <tr>
+            <th class='w-80px'><?php echo $lang->doc->project_name;?></th>
+            <td><?php echo $doc->project_name;?></td>
+          </tr>
+          <tr>
+            <th><?php echo $lang->doc->organization;?></th>
+            <td><?php echo $doc->organization ;?></td>
+          </tr>
+          <tr>
+            <th><?php echo $lang->doc->money;?></th>
+            <td><?php echo $lang->doc->money;?>元</td>
+          </tr>
+          <tr>
+            <th><?php echo $lang->doc->day;?></th>
+            <td><?php echo $lang->doc->day;?>天</td>
+          </tr>
+          <tr>
+            <th><?php echo $lang->doc->addedBy;?></th>
+            <td><?php echo $users[$doc->addedBy];?></td>
+          </tr>
+          <tr>
+            <th><?php echo $lang->doc->addedDate;?></th>
+            <td><?php echo $doc->addedDate;?></td>
+          </tr>
+          <tr>
+            <th><?php echo $lang->doc->editedBy;?></th>
+            <td><?php echo $users[$doc->editedBy];?></td>
+          </tr>
+          <tr>
+            <th><?php echo $lang->doc->editedDate;?></th>
+            <td><?php echo $doc->editedDate;?></td>
+          </tr>
+        </table>
+      </fieldset>
+      <fieldset>
+        <legend><?php echo $lang->doc->info;?></legend>
+        <div class='content'><?php echo $doc->info;?></div>
+      </fieldset>
+      <fieldset>
+        <legend><?php echo $lang->doc->remark;?></legend>
+        <div class='content'><?php echo $doc->remark;?></div>
+      </fieldset>
+      
+      
+        <?php //if($doc->type == 'file'):?>
         <?php echo $this->fetch('file', 'printFiles', array('files' => $doc->files, 'fieldset' => 'true'));?>
-        <?php endif;?>
+        <?php //endif;?>
       </div>
       <div class='actions'><?php if(!$doc->deleted) echo $actionLinks;?></div>
     </div>
   </div>
   <div class='col-side'>
     <div class='main main-side'>
+    <!-- 
       <fieldset>
         <legend><?php echo $lang->doc->digest;?></legend>
         <div><?php echo $doc->digest;?></div>
@@ -115,6 +165,7 @@
           </tr>
         </table>
       </fieldset>
+       -->
       <?php include '../../common/view/action.html.php';?>
     </div>
   </div>

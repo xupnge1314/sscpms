@@ -79,7 +79,7 @@ var browseType = '<?php echo $browseType;?>';
         <td class='text-left' title="<?php echo $doc->title?>"><nobr><?php echo html::a($viewLink, $doc->title);?></nobr></td>
         <td><?php echo $lang->doc->types[$doc->type];?></td>
          -->
-         <td class='text-left' title=""><?php echo $doc->project_name?></td>
+         <td class='text-left' title="<?php echo $doc->project_name?>"><nobr><?php echo html::a($viewLink, $doc->project_name);?></nobr></td>
          <td class='text-left' title=""><?php echo $doc->organization?></td>
         <td class='text-left' title=""><?php echo $doc->money?></td>
         <td class='text-left' title=""><?php echo $doc->day?></td>

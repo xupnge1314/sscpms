@@ -80,7 +80,7 @@ $lang->testtask->menuOrder     = $lang->testcase->menuOrder;
 /* doc menu order. */
 $lang->doc->menuOrder[5]  = 'browse';
 $lang->doc->menuOrder[10] = 'edit';
-$lang->doc->menuOrder[15] = 'module';
+//$lang->doc->menuOrder[15] = 'module';
 $lang->doc->menuOrder[20] = 'delete';
 $lang->doc->menuOrder[25] = 'create';
 

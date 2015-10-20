@@ -55,7 +55,7 @@ $lang->product->accessDenied   = "您无权访问该{$lang->productCommon}";
 
 $lang->product->id        = '编号';
 $lang->product->company   = '所属公司';
-$lang->product->name      = "{$lang->productCommon}名称";
+$lang->product->name      = "项目名称";
 $lang->product->code      = "{$lang->productCommon}代号";
 $lang->product->order     = '排序';
 $lang->product->status    = '状态';
@@ -65,6 +65,24 @@ $lang->product->QD        = '测试负责人';
 $lang->product->RD        = '发布负责人';
 $lang->product->acl       = '访问控制';
 $lang->product->whitelist = '分组白名单';
+
+//添加  2015-09-20
+$lang->product->customer      = "客户名称";
+$lang->product->project_name      = "测试项目";
+$lang->product->quote      = "报价金额";
+$lang->product->money      = "元";
+$lang->product->quote_time      = "报价时间";
+$lang->product->fare      = "目前进展";
+$lang->product->person      = "负责人";
+$lang->product->fares['0'] = "意向";
+$lang->product->fares['1'] = "跟踪";
+$lang->product->fares['2'] = "报价";
+$lang->product->fares['3'] = "已知需求";
+$lang->product->fares['3'] = "下单";
+$lang->product->fares['3'] = "已收样品";
+$lang->product->fares['3'] = "测试中";
+$lang->product->fares['3'] = "已成交";
+$lang->product->fares['3'] = "未成交";
 
 $lang->product->moduleStory  = '按模块';
 $lang->product->searchStory  = '搜索';

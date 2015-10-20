@@ -241,7 +241,7 @@ $lang->doc->menu = new stdclass();
 $lang->doc->menu->list    = '%s';
 $lang->doc->menu->browse  = array('link' => '文档|doc|browse|libID=%s', 'alias' => 'view,create,edit');
 $lang->doc->menu->edit    = '编辑|doc|editLib|libID=%s';
-$lang->doc->menu->module  = '分类|tree|browse|libID=%s&viewType=doc';
+//$lang->doc->menu->module  = '分类|tree|browse|libID=%s&viewType=doc';
 $lang->doc->menu->delete  = array('link' => '删除|doc|deleteLib|libID=%s', 'target' => 'hiddenwin');
 $lang->doc->menu->create  = array('link' => '<i class="icon-plus"></i>&nbsp;添加文档库|doc|createLib', 'float' => 'right');
 
