@@ -14,7 +14,7 @@
 <?php css::import($defaultTheme . 'index.css',   $config->version);?>
 <div class="row">
   <div class="col-md-8">
-    <?php //include './blockprojects.html.php';?>
+    <?php include './blockprojects.html.php';?>
     <?php include './blockproducts.html.php';?>
   </div>
   <div class="col-md-4">
@@ -27,24 +27,24 @@
   </div>
   <?php if($app->user->role and strpos('qa|qd', $app->user->role) !== false):?>
   <div class="col-md-4 col-sm-6">
-    <?php //include './blockbugs.html.php';?>
+    <?php include './blockbugs.html.php';?>
   </div>
   <div class="col-md-4 col-sm-6">
-    <?php //include './blocktasks.html.php';?>
+    <?php include './blocktasks.html.php';?>
   </div>
   <?php elseif($app->user->role and strpos('po|pd', $app->user->role) !== false):?>
   <div class="col-md-4 col-sm-6">
     <?php include './blockstories.html.php';?>
   </div>
   <div class="col-md-4 col-sm-6">
-    <?php //include './blockbugs.html.php';?>
+    <?php include './blockbugs.html.php';?>
   </div>
   <?php else:?>
   <div class="col-md-4 col-sm-6">
-    <?php //include './blocktasks.html.php';?>
+    <?php include './blocktasks.html.php';?>
   </div>
   <div class="col-md-4 col-sm-6">
-    <?php //include './blockbugs.html.php';?>
+    <?php include './blockbugs.html.php';?>
   </div>
   <?php endif;?>
 </div>

@@ -26,7 +26,8 @@ var browseType = '<?php echo $browseType;?>';
     <?php common::printIcon('doc', 'create', "libID=$libID&moduleID=$moduleID&productID=$productID&projectID=$projectID&from=doc");?>
   </div>
   <div id='querybox' class='<?php if($browseType == 'bysearch') echo 'show';?>'></div>
-</div><!-- 
+</div>
+<!-- 
 <div class='side' id='treebox'>
   <a class='side-handle' data-id='treebox'><i class='icon-caret-left'></i></a>
   <div class='side-body'>
@@ -41,26 +42,26 @@ var browseType = '<?php echo $browseType;?>';
       </div>
     </div>
   </div>
-</div> -->
+</div>
+ -->
 <div class='main'>
   <table class='table table-condensed table-hover table-striped tablesorter table-fixed' id='docList'>
     <thead>
       <tr>
         <?php $vars = "libID=$libID&module=$moduleID&productID=$productID&projectID=$projectID&browseType=$browseType&param=$param&orderBy=%s&recTotal={$pager->recTotal}&recPerPage={$pager->recPerPage}";?>
         <th class='w-id'>   <?php common::printOrderLink('id',        $orderBy, $vars, $lang->idAB);?></th>
-        <th>                <?php common::printOrderLink('title',     $orderBy, $vars, $lang->doc->title);?></th>
-        
-        <th>                <?php common::printOrderLink('organization',     $orderBy, $vars, $lang->doc->organization);?></th>
-        <th>                <?php common::printOrderLink('money',     $orderBy, $vars, $lang->doc->money);?></th>
-        <th>                <?php common::printOrderLink('day',     $orderBy, $vars, $lang->doc->day);?></th>
-        <th>                <?php common::printOrderLink('info',     $orderBy, $vars, $lang->doc->info);?></th>
-        <th>                <?php common::printOrderLink('remark',     $orderBy, $vars, $lang->doc->remark);?></th>
-        <th>                <?php echo $lang->doc->add_user;?></th>
-        <th>                <?php echo $lang->doc->add_time;?></th>
-        
         <!-- 
+        <th>                <?php common::printOrderLink('title',     $orderBy, $vars, $lang->doc->title);?></th>
         <th class='w-100px'><?php common::printOrderLink('type',      $orderBy, $vars, $lang->doc->type);?></th>
          -->
+         <!-- 修改  2015-09-20 -->
+        <th class='w-100px'><?php common::printOrderLink('project_name',      $orderBy, $vars, $lang->doc->project_name);?></th>
+        <th class='w-100px'><?php common::printOrderLink('organization',      $orderBy, $vars, $lang->doc->organization);?></th>
+        <th class='w-100px'><?php common::printOrderLink('money',      $orderBy, $vars, $lang->doc->money);?></th>
+        <th class='w-100px'><?php common::printOrderLink('day',      $orderBy, $vars, $lang->doc->day);?></th>
+        <th class='w-100px'><?php common::printOrderLink('info',      $orderBy, $vars, $lang->doc->info);?></th>
+        <th class='w-100px'><?php common::printOrderLink('remark',      $orderBy, $vars, $lang->doc->remark);?></th>
+        
         <th class='w-100px'><?php common::printOrderLink('addedBy',   $orderBy, $vars, $lang->doc->addedBy);?></th>
         <th class='w-120px'><?php common::printOrderLink('addedDate', $orderBy, $vars, $lang->doc->addedDate);?></th>
         <th class='w-100px {sorter:false}'><?php echo $lang->actions;?></th>
@@ -74,19 +75,16 @@ var browseType = '<?php echo $browseType;?>';
       ?>
       <tr class='text-center'>
         <td><?php if($canView) echo html::a($viewLink, sprintf('%03d', $doc->id)); else printf('%03d', $doc->id);?></td>
+        <!-- 
         <td class='text-left' title="<?php echo $doc->title?>"><nobr><?php echo html::a($viewLink, $doc->title);?></nobr></td>
-        
-        <td class='text-left' title=""><?php echo $doc->organization?></td>
+        <td><?php echo $lang->doc->types[$doc->type];?></td>
+         -->
+         <td class='text-left' title=""><?php echo $doc->project_name?></td>
+         <td class='text-left' title=""><?php echo $doc->organization?></td>
         <td class='text-left' title=""><?php echo $doc->money?></td>
         <td class='text-left' title=""><?php echo $doc->day?></td>
         <td class='text-left' title=""><?php echo $doc->info?></td>
         <td class='text-left' title=""><?php echo $doc->remark?></td>
-        <td class='text-left' title=""><?php echo $doc->add_user?></td>
-        <td class='text-left' title=""><?php echo $doc->add_time?></td>
-        
-        <!-- 
-        <td><?php echo $lang->doc->types[$doc->type];?></td>
-         -->
         <td><?php isset($users[$doc->addedBy]) ? print($users[$doc->addedBy]) : print($doc->addedBy);?></td>
         <td><?php echo date("m-d H:i", strtotime($doc->addedDate));?></td>
         <td>
@@ -102,7 +100,7 @@ var browseType = '<?php echo $browseType;?>';
       </tr>
       <?php endforeach;?>
     </tbody>
-    <tfoot><tr><td colspan='6'><?php $pager->show();?></td></tr></tfoot>
+    <tfoot><tr><td colspan='10'><?php $pager->show();?></td></tr></tfoot>
   </table>
 </div>
 <?php include '../../common/view/footer.html.php';?>

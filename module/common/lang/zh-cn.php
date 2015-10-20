@@ -18,7 +18,7 @@ $lang->downArrow = '↓';
 $lang->null      = '空';
 $lang->ellipsis  = '…';
 
-$lang->zentaoPMS      = '禅道';
+$lang->zentaoPMS      = '时时测';
 $lang->welcome        = "%s项目管理系统";
 $lang->myControl      = "我的地盘";
 $lang->currentPos     = '当前位置：';
@@ -97,24 +97,24 @@ $lang->menu->product  = $lang->productCommon . '|product|index';
 //$lang->menu->project  = $lang->projectCommon . '|project|index';
 //$lang->menu->qa       = '测试|qa|index';
 $lang->menu->doc      = '文档|doc|index';
-$lang->menu->report   = '统计|report|index';
+//$lang->menu->report   = '统计|report|index';
 $lang->menu->company  = '组织|company|index';
 $lang->menu->admin    = '后台|admin|index';
 
 /* 查询条中可以选择的对象列表。*/
-$lang->searchObjects['bug']         = 'Bug';
+/* $lang->searchObjects['bug']         = 'Bug';
 $lang->searchObjects['story']       = '需求';
 $lang->searchObjects['task']        = '任务';
-$lang->searchObjects['testcase']    = '用例';
+$lang->searchObjects['testcase']    = '用例'; */
 $lang->searchObjects['project']     = $lang->projectCommon;
 $lang->searchObjects['product']     = $lang->productCommon;
-$lang->searchObjects['user']        = '用户';
+/* $lang->searchObjects['user']        = '用户';
 $lang->searchObjects['build']       = '版本';
 $lang->searchObjects['release']     = '发布';
 $lang->searchObjects['productplan'] = $lang->productCommon . '计划';
-$lang->searchObjects['testtask']    = '测试版本';
+$lang->searchObjects['testtask']    = '测试版本'; */
 $lang->searchObjects['doc']         = '文档';
-$lang->searchTips                   = '编号(ctrl+g)';
+//$lang->searchTips                   = '编号(ctrl+g)';
 
 /* 导入支持的编码格式。*/
 $lang->importEncodeList['gbk']   = 'GBK';
@@ -153,13 +153,13 @@ $lang->my->menu = new stdclass();
 
 $lang->my->menu->account        = '<span id="myname"><i class="icon-user"></i> %s' . $lang->arrow . '</span>';
 $lang->my->menu->index          = '首页|my|index';
-//$lang->my->menu->todo           = array('link' => '待办|my|todo|', 'subModule' => 'todo');
-//$lang->my->menu->task           = array('link' => '任务|my|task|', 'subModule' => 'task');
-//$lang->my->menu->bug            = array('link' => 'Bug|my|bug|',   'subModule' => 'bug');
-//$lang->my->menu->testtask       = array('link' => '测试|my|testtask|', 'subModule' => 'testcase,testtask', 'alias' => 'testcase');
+/* $lang->my->menu->todo           = array('link' => '待办|my|todo|', 'subModule' => 'todo');
+$lang->my->menu->task           = array('link' => '任务|my|task|', 'subModule' => 'task');
+$lang->my->menu->bug            = array('link' => 'Bug|my|bug|',   'subModule' => 'bug');
+$lang->my->menu->testtask       = array('link' => '测试|my|testtask|', 'subModule' => 'testcase,testtask', 'alias' => 'testcase');
 $lang->my->menu->story          = array('link' => '需求|my|story|',   'subModule' => 'story');
-//$lang->my->menu->myProject      = "{$lang->projectCommon}|my|project|";
-$lang->my->menu->dynamic        = '动态|my|dynamic|';
+$lang->my->menu->myProject      = "{$lang->projectCommon}|my|project|";
+$lang->my->menu->dynamic        = '动态|my|dynamic|'; */
 $lang->my->menu->profile        = array('link' => '档案|my|profile', 'alias' => 'editprofile');
 $lang->my->menu->changePassword = '密码|my|changepassword';
 
@@ -171,9 +171,9 @@ $lang->product = new stdclass();
 $lang->product->menu = new stdclass();
 
 $lang->product->menu->list    = '%s';
-$lang->product->menu->story   = array('link' => '全部测试项目|product|browse|productID=%s', 'alias' => 'batchedit', 'subModule' => 'story');
-$lang->product->menu->dynamic = '动态|product|dynamic|productID=%s';
-$lang->product->menu->plan    = array('link' => '计划|productplan|browse|productID=%s', 'subModule' => 'productplan');
+//$lang->product->menu->story   = array('link' => '需求|product|browse|productID=%s', 'alias' => 'batchedit', 'subModule' => 'story');
+//$lang->product->menu->dynamic = '动态|product|dynamic|productID=%s';
+//$lang->product->menu->plan    = array('link' => '计划|productplan|browse|productID=%s', 'subModule' => 'productplan');
 //$lang->product->menu->release = array('link' => '发布|release|browse|productID=%s',     'subModule' => 'release');
 //$lang->product->menu->roadmap = '路线图|product|roadmap|productID=%s';
 $lang->product->menu->doc     = array('link' => '文档|product|doc|productID=%s', 'subModule' => 'doc');
@@ -183,11 +183,11 @@ $lang->product->menu->view    = array('link' => '概况|product|view|productID=%
 $lang->product->menu->create  = array('link' => "<i class='icon-plus'></i>&nbsp;添加{$lang->productCommon}|product|create", 'float' => 'right');
 $lang->product->menu->all     = array('link' => "<i class='icon-cubes'></i>&nbsp;所有{$lang->productCommon}|product|index|locate=no&productID=%s", 'float' => 'right');
 
-//$lang->story       = new stdclass();
+$lang->story       = new stdclass();
 $lang->productplan = new stdclass();
 $lang->release     = new stdclass();
 
-//$lang->story->menu       = $lang->product->menu;
+$lang->story->menu       = $lang->product->menu;
 $lang->productplan->menu = $lang->product->menu;
 $lang->release->menu     = $lang->product->menu;
 
@@ -241,7 +241,7 @@ $lang->doc->menu = new stdclass();
 $lang->doc->menu->list    = '%s';
 $lang->doc->menu->browse  = array('link' => '文档|doc|browse|libID=%s', 'alias' => 'view,create,edit');
 $lang->doc->menu->edit    = '编辑|doc|editLib|libID=%s';
-//$lang->doc->menu->module  = '分类|tree|browse|libID=%s&viewType=doc';
+$lang->doc->menu->module  = '分类|tree|browse|libID=%s&viewType=doc';
 $lang->doc->menu->delete  = array('link' => '删除|doc|deleteLib|libID=%s', 'target' => 'hiddenwin');
 $lang->doc->menu->create  = array('link' => '<i class="icon-plus"></i>&nbsp;添加文档库|doc|createLib', 'float' => 'right');
 
@@ -250,8 +250,8 @@ $lang->report = new stdclass();
 $lang->report->menu = new stdclass();
 
 $lang->report->menu->product = array('link' => $lang->productCommon . '|report|productsummary');
-//$lang->report->menu->prj     = array('link' => $lang->projectCommon . '|report|projectdeviation');
-//$lang->report->menu->test    = array('link' => '测试|report|bugcreate', 'alias' => 'bugassign');
+$lang->report->menu->prj     = array('link' => $lang->projectCommon . '|report|projectdeviation');
+$lang->report->menu->test    = array('link' => '测试|report|bugcreate', 'alias' => 'bugassign');
 $lang->report->menu->staff   = array('link' => '组织|report|workload');
 
 /* 组织结构视图菜单设置。*/
@@ -262,7 +262,7 @@ $lang->company->menu->browseUser   = array('link' => '用户|company|browse', 's
 $lang->company->menu->dept         = array('link' => '部门|dept|browse', 'subModule' => 'dept');
 $lang->company->menu->browseGroup  = array('link' => '权限|group|browse', 'subModule' => 'group');
 $lang->company->menu->view         = array('link' => '公司|company|view', 'alias' => 'edit');
-//$lang->company->menu->dynamic      = '动态|company|dynamic|';
+$lang->company->menu->dynamic      = '动态|company|dynamic|';
 $lang->company->menu->addGroup     = array('link' => '<i class="icon-group"></i>&nbsp;添加分组|group|create', 'float' => 'right');
 $lang->company->menu->batchAddUser = array('link' => '<i class="icon-plus-sign"></i>&nbsp;批量添加|user|batchCreate|dept=%s', 'subModule' => 'user', 'float' => 'right');
 $lang->company->menu->addUser      = array('link' => '<i class="icon-plus"></i>&nbsp;添加用户|user|create|dept=%s', 'subModule' => 'user', 'float' => 'right');

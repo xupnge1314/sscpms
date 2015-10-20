@@ -16,7 +16,7 @@ $lang->doc->product        = '所属' . $lang->productCommon;
 $lang->doc->project        = '所属' . $lang->projectCommon;
 $lang->doc->lib            = '所属文档库';
 $lang->doc->module         = '所属分类';
-//$lang->doc->title          = '文档标题';
+$lang->doc->title          = '文档标题';
 $lang->doc->digest         = '文档摘要';
 $lang->doc->comment        = '文档备注';
 $lang->doc->type           = '文档类型';
@@ -32,18 +32,17 @@ $lang->doc->editedDate     = '编辑时间';
 $lang->doc->basicInfo      = '基本信息';
 $lang->doc->deleted        = '已删除';
 
-//2015-10-14  添加
-$lang->doc->title          = '测试项目';
+//添加字段  说明
 $lang->doc->project_name        = '测试项目';
 $lang->doc->organization        = '测试机构';
 $lang->doc->money        = '优惠价格';
 $lang->doc->moneys        = '元';
-$lang->doc->day        = '测试周期';
 $lang->doc->days        = '天';
+$lang->doc->day        = '测试周期';
 $lang->doc->info        = '具体说明';
 $lang->doc->remark        = '备注';
 $lang->doc->add_user        = '编辑人员';
-$lang->doc->add_time        = '日期';
+$lang->doc->add_time        = '添加日期';
 
 $lang->doc->moduleDoc      = '按模块浏览';
 $lang->doc->searchDoc      = '搜索';

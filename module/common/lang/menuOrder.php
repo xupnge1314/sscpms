@@ -5,42 +5,42 @@ $lang->menuOrder[10] = 'product';
 //$lang->menuOrder[15] = 'project';
 //$lang->menuOrder[20] = 'qa';
 $lang->menuOrder[25] = 'doc';
-$lang->menuOrder[30] = 'report';
+//$lang->menuOrder[30] = 'report';
 $lang->menuOrder[35] = 'company';
 $lang->menuOrder[40] = 'admin';
 
 /* index menu order. */
 $lang->index->menuOrder[5]  = 'product';
-//$lang->index->menuOrder[10] = 'project';
+$lang->index->menuOrder[10] = 'project';
 
 /* my menu order. */
 $lang->my->menuOrder[5]  = 'account';
 $lang->my->menuOrder[10] = 'index';
-$lang->my->menuOrder[15] = 'todo';
-//$lang->my->menuOrder[20] = 'task';
-//$lang->my->menuOrder[25] = 'bug';
-//$lang->my->menuOrder[30] = 'testtask';
+/* $lang->my->menuOrder[15] = 'todo';
+$lang->my->menuOrder[20] = 'task';
+$lang->my->menuOrder[25] = 'bug';
+$lang->my->menuOrder[30] = 'testtask';
 $lang->my->menuOrder[35] = 'story';
-//$lang->my->menuOrder[40] = 'myProject';
-$lang->my->menuOrder[45] = 'dynamic';
+$lang->my->menuOrder[40] = 'myProject';
+$lang->my->menuOrder[45] = 'dynamic'; */
 $lang->my->menuOrder[50] = 'profile';
 $lang->my->menuOrder[55] = 'changePassword';
 $lang->todo->menuOrder   = $lang->my->menuOrder;
 
 /* product menu order. */
-$lang->product->menuOrder[5]  = 'story';
+/* $lang->product->menuOrder[5]  = 'story';
 $lang->product->menuOrder[10] = 'dynamic';
 $lang->product->menuOrder[15] = 'plan';
-//$lang->product->menuOrder[20] = 'release';
-//$lang->product->menuOrder[25] = 'roadmap';
+$lang->product->menuOrder[20] = 'release';
+$lang->product->menuOrder[25] = 'roadmap'; */
 $lang->product->menuOrder[30] = 'doc';
-//$lang->product->menuOrder[35] = 'project';
-//$lang->product->menuOrder[40] = 'module';
+/* $lang->product->menuOrder[35] = 'project';
+$lang->product->menuOrder[40] = 'module'; */
 $lang->product->menuOrder[45] = 'view';
 $lang->product->menuOrder[50] = 'order';
 $lang->product->menuOrder[55] = 'create';
 $lang->product->menuOrder[60] = 'all';
-//$lang->story->menuOrder       = $lang->product->menuOrder;
+$lang->story->menuOrder       = $lang->product->menuOrder;
 $lang->productplan->menuOrder = $lang->product->menuOrder;
 $lang->release->menuOrder     = $lang->product->menuOrder;
 
@@ -80,14 +80,14 @@ $lang->testtask->menuOrder     = $lang->testcase->menuOrder;
 /* doc menu order. */
 $lang->doc->menuOrder[5]  = 'browse';
 $lang->doc->menuOrder[10] = 'edit';
-//$lang->doc->menuOrder[15] = 'module';
+$lang->doc->menuOrder[15] = 'module';
 $lang->doc->menuOrder[20] = 'delete';
 $lang->doc->menuOrder[25] = 'create';
 
 /* report menu order. */
 $lang->report->menuOrder[5]  = 'product';
-//$lang->report->menuOrder[10] = 'prj';
-//$lang->report->menuOrder[15] = 'test';
+$lang->report->menuOrder[10] = 'prj';
+$lang->report->menuOrder[15] = 'test';
 $lang->report->menuOrder[20] = 'staff';
 
 /* company menu order. */
@@ -96,7 +96,7 @@ $lang->company->menuOrder[5]  = 'browseUser';
 $lang->company->menuOrder[10] = 'dept';
 $lang->company->menuOrder[15] = 'browseGroup';
 $lang->company->menuOrder[20] = 'edit';
-//$lang->company->menuOrder[25] = 'dynamic';
+$lang->company->menuOrder[25] = 'dynamic';
 $lang->company->menuOrder[30] = 'addGroup';
 $lang->company->menuOrder[35] = 'batchAddUser';
 $lang->company->menuOrder[40] = 'addUser';
@@ -108,13 +108,13 @@ $lang->user->menuOrder        = $lang->company->menuOrder;
 //$lang->admin->menuOrder[5]  = 'index';
 //$lang->admin->menuOrder[10] = 'extension';
 //$lang->admin->menuOrder[15] = 'custom';
-$lang->admin->menuOrder[20] = 'editor';
+//$lang->admin->menuOrder[20] = 'editor';
 $lang->admin->menuOrder[25] = 'mail';
-$lang->admin->menuOrder[30] = 'custom';
+//$lang->admin->menuOrder[30] = 'custom';
 //$lang->admin->menuOrder[40] = 'convert';
 //$lang->admin->menuOrder[45] = 'cron';
 //$lang->admin->menuOrder[50] = 'backup';
-$lang->admin->menuOrder[55] = 'dev';
+//$lang->admin->menuOrder[55] = 'dev';
 $lang->admin->menuOrder[60] = 'safe';
 //$lang->admin->menuOrder[65] = 'sso';
 //$lang->admin->menuOrder[70] = 'trashes';

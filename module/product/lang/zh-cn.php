@@ -46,7 +46,6 @@ $lang->product->saveButton      = " 保存 (S) ";
 $lang->product->confirmDelete   = " 您确定删除该{$lang->productCommon}吗？";
 $lang->product->ajaxGetProjects = "接口:{$lang->projectCommon}列表";
 $lang->product->ajaxGetPlans    = "接口:计划列表";
-//$lang->product->confirmDelete      = "您确定删除该文档吗？";
 
 $lang->product->errorFormat    = "{$lang->productCommon}数据格式不正确";
 $lang->product->errorEmptyName = "{$lang->productCommon}名称不能为空";
@@ -61,39 +60,11 @@ $lang->product->code      = "{$lang->productCommon}代号";
 $lang->product->order     = '排序';
 $lang->product->status    = '状态';
 $lang->product->desc      = "{$lang->productCommon}描述";
-//$lang->product->PO        = "{$lang->productCommon}负责人";
-$lang->product->PO        = "跟踪负责人";
+$lang->product->PO        = "{$lang->productCommon}负责人";
 $lang->product->QD        = '测试负责人';
-$lang->product->RD        = '编辑人';
-//$lang->product->RD        = '发布负责人';
+$lang->product->RD        = '发布负责人';
 $lang->product->acl       = '访问控制';
 $lang->product->whitelist = '分组白名单';
-
-//2015-10-14   添加
-$lang->product->customer     = '客户名称';
-$lang->product->project_name     = '测试项目';
-$lang->product->quote     = '报价金额';
-$lang->product->money     = '元';
-$lang->product->quote_time     = '报价时间';
-$lang->product->fare     = '目前进展';
-$lang->product->status1     = '状态';
-$lang->product->reason     = '未成交原因';
-$lang->product->cash_time     = '收款日期';
-$lang->product->invoice_time     = '开票日期';
-$lang->product->sample_time     = '收样时间';
-$lang->product->report_time     = '出报告时间';
-$lang->product->send_time     = '报告/退样/发票寄送时间';
-$lang->product->package_company     = '分包单位';
-$lang->product->package_money     = '分包金额';
-$lang->product->package_pay_time     = '分包付款日期';
-$lang->product->package_invoice_time     = '分包开票日期';
-
-$lang->product->fareList['sprint']    = "短期$lang->productCommon";
-$lang->product->fareList['waterfall'] = "长期$lang->productCommon";
-$lang->product->fareList['ops']       = "运维$lang->productCommon";
-
-$lang->product->status1List['0']    = "未完成";
-$lang->product->status1List['1'] = "完成";
 
 $lang->product->moduleStory  = '按模块';
 $lang->product->searchStory  = '搜索';

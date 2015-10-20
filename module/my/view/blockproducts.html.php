@@ -10,7 +10,7 @@
 <table class='table table-condensed table-hover table-striped table-borderless table-fixed'>
   <thead>
     <tr class='text-center'>
-      <th class='w-150px text-left'><i class="icon icon-cube"></i> <?php echo $lang->product->project_name;?></th>
+      <th class='w-150px text-left'><i class="icon icon-cube"></i> <?php echo $lang->product->name;?></th>
       <th title='<?php echo $lang->story->common;?>'><?php echo $lang->story->statusList['active'];?></th>
       <th title='<?php echo $lang->story->common;?>'><?php echo $lang->story->statusList['changed'];?></th>
       <th title='<?php echo $lang->story->common;?>'><?php echo $lang->story->statusList['draft'];?></th>
@@ -24,7 +24,7 @@
   <tbody>
     <?php foreach($productStats as $product):?>
     <tr class='text-center'>
-      <td class='text-left'><?php echo html::a($this->createLink('product', 'browse', 'productID=' . $product->id), $product->project_name, '', "title='$product->project_name'");?></td>
+      <td class='text-left'><?php echo html::a($this->createLink('product', 'browse', 'productID=' . $product->id), $product->name, '', "title='$product->name'");?></td>
       <td><?php echo $product->stories['active']?></td>
       <td><?php echo $product->stories['changed']?></td>
       <td><?php echo $product->stories['draft']?></td>
