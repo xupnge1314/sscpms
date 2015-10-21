@@ -12,8 +12,12 @@
 ?>
 <?php include '../../common/view/header.html.php';?>
 <?php include '../../common/view/treeview.html.php';?>
+<!-- 添加 2015-09-21 -->
+<?php js::set('confirmDelete', $lang->product->confirmDelete)?>
+
 <?php js::set('browseType', $browseType);?>
 <div id='featurebar'>
+<!-- 
   <ul class='nav'>
     <li id='unclosedTab'>     <?php echo html::a($this->inlink('browse', "productID=$productID&browseType=unclosed"),     $lang->product->unclosed);?></li>
     <li id='allstoryTab'>     <?php echo html::a($this->inlink('browse', "productID=$productID&browseType=allStory"),     $lang->product->allStory);?></li>
@@ -52,8 +56,10 @@
     ?>
     </div>
   </div>
+   -->
   <div id='querybox' class='<?php if($browseType =='bysearch') echo 'show';?>'></div>
 </div>
+<!-- 
 <div class='side' id='treebox'>
   <a class='side-handle' data-id='productTree'><i class='icon-caret-left'></i></a>
   <div class='side-body'>
@@ -69,6 +75,7 @@
     </div>
   </div>
 </div>
+ -->
 <div class='main'>
   <form method='post' id='productStoryForm'>
     <table class='table table-condensed table-hover table-striped tablesorter table-fixed' id='storyList'>
@@ -76,6 +83,15 @@
       <tr>
         <?php $vars = "productID=$productID&browseType=$browseType&param=$moduleID&orderBy=%s&recTotal={$pager->recTotal}&recPerPage={$pager->recPerPage}";?>
         <th class='w-id'>  <?php common::printOrderLink('id',         $orderBy, $vars, $lang->idAB);?></th>
+        <th><?php echo $lang->product->name;?></th>
+        <th class='w-80px'><?php echo $lang->product->customer;?></th>
+        <th class='w-80px'><?php echo $lang->product->project_name;?></th>
+        <th class='w-80px'><?php echo $lang->product->quote;?></th>
+        <th class='w-80px'><?php echo $lang->product->quote_time;?></th>
+        <th class='w-80px'><?php echo $lang->product->fare;?></th>
+        <th class='w-80px'><?php echo $lang->product->person;?></th>
+        
+        <!-- 
         <th class='w-pri'> <?php common::printOrderLink('pri',        $orderBy, $vars, $lang->priAB);?></th>
         <th class='w-p30'> <?php common::printOrderLink('title',      $orderBy, $vars, $lang->story->title);?></th>
         <th>               <?php common::printOrderLink('plan',       $orderBy, $vars, $lang->story->planAB);?></th>
@@ -85,20 +101,43 @@
         <th class='w-hour'><?php common::printOrderLink('estimate',   $orderBy, $vars, $lang->story->estimateAB);?></th>
         <th>               <?php common::printOrderLink('status',     $orderBy, $vars, $lang->statusAB);?></th>
         <th>               <?php common::printOrderLink('stage',      $orderBy, $vars, $lang->story->stageAB);?></th>
+         -->
         <th class='w-140px {sorter:false}'><?php echo $lang->actions;?></th>
       </tr>
       </thead>
       <tbody>
-      <?php foreach($stories as $key => $story):?>
+      <!-- 修改 2015-09-21  -->
+      <?php foreach($productStats as $product):?>
+      <?php //foreach($stories as $key => $story):?>
       <?php
-      $viewLink = $this->createLink('story', 'view', "storyID=$story->id");
-      $canView  = common::hasPriv('story', 'view');
+      //$viewLink = $this->createLink('story', 'view', "storyID=$story->id");
+      //$canView  = common::hasPriv('story', 'view');
       ?>
+      
       <tr class='text-center'>
         <td class='text-left'>
-          <input type='checkbox' name='storyIDList[<?php echo $story->id;?>]' value='<?php echo $story->id;?>' /> 
-          <?php if($canView) echo html::a($viewLink, sprintf('%03d', $story->id)); else printf('%03d', $story->id);?>
+          <input type='checkbox' name='productIDList[<?php echo $product->id;?>]' value='<?php echo $product->id;?>' /> 
+          <?php if($canView) echo html::a($viewLink, sprintf('%03d', $product->id)); else printf('%03d', $product->id);?>
         </td>
+        <td class='text-left' title='<?php echo $product->name?>'><?php echo html::a($this->createLink('product', 'view', 'product=' . $product->id), $product->name);?></td>
+        <td><?php echo $product->customer;?></td>
+        <td><?php echo $product->project_name;?></td>
+        <td><?php echo $product->quote;?>元</td>
+        <td><?php echo $product->quote_time;?></td>
+        <td><?php echo $lang->product->fares[$product->fare];?></td>
+        <td><?php echo $product->person;?></td>
+        <td>
+          <?php 
+          common::printIcon('product', 'edit', "product={$product->id}", '', 'list');
+          //common::printIcon('product', 'delete', $params, '', 'button', '', 'hiddenwin');
+          if(common::hasPriv('product', 'delete'))
+          {
+              $deleteURL = $this->createLink('product', 'delete', "productID=$product->id&confirm=yes");
+              echo html::a("javascript:ajaxDelete(\"$deleteURL\",\"productList\",confirmDelete)", '<i class="icon-remove"></i>', '', "class='btn-icon' title='{$lang->product->delete}'");
+          }
+          ?>
+        </td>
+        <!-- 
         <td><span class='<?php echo 'pri' . zget($lang->story->priList, $story->pri, $story->pri);?>'><?php echo zget($lang->story->priList, $story->pri, $story->pri)?></span></td>
         <td class='text-left' title="<?php echo $story->title?>"><nobr><?php echo html::a($viewLink, $story->title);?></nobr></td>
         <td title="<?php echo $story->planTitle?>"><?php echo $story->planTitle;?></td>
@@ -118,12 +157,14 @@
           common::printIcon('story', 'createCase', "productID=$story->product&module=0&from=&param=0&$vars", $story, 'list', 'sitemap');
           ?>
         </td>
+         -->
       </tr>
       <?php endforeach;?>
       </tbody>
       <tfoot>
       <tr>
-        <td colspan='11'>
+        <td colspan='9'>
+        <!-- 
           <div class='table-actions clearfix'>
             <?php if(count($stories)):?>
             <div class='btn-group'><?php echo html::selectButton();?></div>
@@ -248,6 +289,7 @@
             <?php endif; ?>
             <div class='text'><?php echo $summary;?></div>
           </div>
+           -->
           <?php $pager->show();?>
         </td>
       </tr>
