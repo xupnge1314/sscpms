@@ -64,6 +64,7 @@ var browseType = '<?php echo $browseType;?>';
         
         <th class='w-100px'><?php common::printOrderLink('addedBy',   $orderBy, $vars, $lang->doc->addedBy);?></th>
         <th class='w-120px'><?php common::printOrderLink('addedDate', $orderBy, $vars, $lang->doc->addedDate);?></th>
+        <th class='w-120px'><?php echo $lang->doc->files;?></th>
         <th class='w-100px {sorter:false}'><?php echo $lang->actions;?></th>
       </tr>
     </thead>
@@ -87,6 +88,7 @@ var browseType = '<?php echo $browseType;?>';
         <td class='text-left' title=""><?php echo $doc->remark?></td>
         <td><?php isset($users[$doc->addedBy]) ? print($users[$doc->addedBy]) : print($doc->addedBy);?></td>
         <td><?php echo date("m-d H:i", strtotime($doc->addedDate));?></td>
+        <td><?php echo $this->fetch('file', 'printFiles', array('files' => $doc->files, 'fieldset' => 'true'));?></td>
         <td>
           <?php 
           common::printIcon('doc', 'edit', "doc={$doc->id}", '', 'list');

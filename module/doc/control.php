@@ -152,6 +152,7 @@ class doc extends control
         $this->view->docs          = $docs;
         $this->view->pager         = $pager;
         $this->view->users         = $this->loadModel('user')->getPairs('noletter');
+        //$doc->view->files = $this->loadModel('file')->getByObject('doc', $docID);
         $this->view->orderBy       = $orderBy;
         $this->view->productID     = $productID;
         $this->view->projectID     = $projectID;

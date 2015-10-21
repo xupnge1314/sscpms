@@ -21,7 +21,7 @@
       <strong><small class='text-muted'><i class='icon icon-plus'></i></small> <?php echo $lang->product->create;?></strong>
     </div>
   </div>
-  <form class='form-condensed' method='post' target='hiddenwin' id='dataform'>
+  <form class='form-condensed' method='post' target='hiddenwin' id='dataform'  enctype='multipart/form-data'>
     <table class='table table-form'> 
       <tr>
         <th class='w-90px'><?php echo $lang->product->name;?></th>
@@ -87,10 +87,12 @@
         <th><?php echo $lang->product->person;?></th>
         <td><?php echo html::input('person', '', "class='form-control'");?></td><td></td>
       </tr>
+      <!--  -->
        <tr id='fileBox'>
-        <th><?php echo $lang->doc->files;?></th>
+        <th><?php echo $lang->product->files;?></th>
         <td colspan='2'><?php echo $this->fetch('file', 'buildform');?></td><td></td>
-      </tr>  
+      </tr> 
+       
       <tr><td></td><td colspan='2'><?php echo html::submitButton();?></td></tr>
     </table>
   </form>

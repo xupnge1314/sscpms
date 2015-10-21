@@ -20,12 +20,13 @@
       <small class='text-muted'> <?php echo $lang->product->edit;?> <i class='icon icon-pencil'></i></small>
     </div>
   </div>
-  <form class='form-condensed' method='post' target='hiddenwin' id='dataform'>
+  <form class='form-condensed' method='post' target='hiddenwin' id='dataform' enctype='multipart/form-data'>
     <table align='center' class='table table-form'> 
       <tr>
         <th class='w-90px'><?php echo $lang->product->name;?></th>
         <td class='w-p25-f'><?php echo html::input('name', $product->name, "class='form-control'");?></td><td></td>
       </tr>  
+      <!-- 
       <tr>
         <th><?php echo $lang->product->code;?></th>
         <td><?php echo html::input('code', $product->code, "class='form-control'");?></td><td></td>
@@ -57,7 +58,48 @@
       <tr id='whitelistBox' <?php if($product->acl != 'custom') echo "class='hidden'";?>>
         <th><?php echo $lang->product->whitelist;?></th>
         <td colspan='2'><?php echo html::checkbox('whitelist', $groups, $product->whitelist);?></td>
-      </tr>  
+      </tr>
+       -->
+       <!-- 添加 2015-09-21 --><!--  -->
+      <tr>
+        <th><?php echo $lang->product->customer;?></th>
+        <td><?php echo html::input('customer', $product->customer, "class='form-control'");?></td><td></td>
+      </tr> 
+      <tr>
+        <th><?php echo $lang->product->project_name;?></th>
+        <td><?php echo html::input('project_name', $product->project_name, "class='form-control'");?></td><td></td>
+      </tr> 
+      <tr>
+        <th><?php echo $lang->product->quote;?></th>
+        <td>
+        <div class='input-group'>
+        <?php echo html::input('quote', $product->quote, "class='form-control'");?>
+        <span class='input-group-addon'><?php echo $lang->product->money;?></span>
+        </div>
+        </td><td></td>
+      </tr> 
+      <tr>
+        <th><?php echo $lang->product->quote_time;?></th>
+        <td><?php echo html::input('quote_time',$product->quote_time, "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->quote_time . "'");?></td><td></td>
+      </tr>
+      <tr>
+        <th><?php echo $lang->product->fare;?></th>
+        <td><?php echo html::select('fare', $lang->product->fares, $product->fare, "class='form-control chosen'");?></td><td></td>
+      </tr>
+      <tr>
+        <th><?php echo $lang->product->person;?></th>
+        <td><?php echo html::input('person', $product->person, "class='form-control'");?></td><td></td>
+      </tr>
+      <!-- 
+      <tr><td>
+      <?php echo $this->fetch('file', 'printFiles', array('files' => $doc->files, 'fieldset' => 'true'));?></td><td></td>
+      </tr>
+       -->
+      <tr id='fileBox'>
+        <th><?php echo $lang->product->files;?></th>
+        <td colspan='2'><?php echo $this->fetch('file', 'buildform');?></td><td></td>
+      </tr> 
+        
       <tr><td></td><td colspan='2'><?php echo html::submitButton();?></td></tr>
     </table>
   </form>

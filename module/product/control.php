@@ -228,6 +228,10 @@ class product extends control
         {
             $changes = $this->product->update($productID); 
             if(dao::isError()) die(js::error(dao::getError()));
+            //
+            $files = $this->loadModel('file')->saveUpload('product', $productID);
+            if(!empty($files)) $fileAction = $this->lang->addFiles . join(',', $files) . "\n" ;
+            
             if($action == 'undelete')
             {
                 $this->loadModel('action');
@@ -240,6 +244,7 @@ class product extends control
                 $actionID = $this->loadModel('action')->create('product', $productID, 'edited');
                 $this->action->logHistory($actionID, $changes);
             }
+            
             die(js::locate(inlink('view', "product=$productID"), 'parent'));
         }
 
@@ -343,7 +348,8 @@ class product extends control
     {
         $this->product->setMenu($this->products, $productID);
 
-        $product  = $this->product->getStatByID($productID);
+        //$product  = $this->product->getStatByID($productID);
+        $product  = $this->product->getByID($productID);
         $product->desc = $this->loadModel('file')->setImgSize($product->desc);
         if(!$product) die(js::error($this->lang->notFound) . js::locate('back'));
 
