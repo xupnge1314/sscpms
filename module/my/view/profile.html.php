@@ -54,10 +54,12 @@
       <th><?php echo $lang->group->priv;?></th>
       <td><?php foreach($groups as $group) echo $group->name . ' '; ?></td>
     </tr>
+    <!-- 
     <tr>
       <th><?php echo $lang->user->commiter;?></th>
       <td><?php echo $user->commiter;?></td>
     </tr>
+     -->
     <tr>
       <th><?php echo $lang->user->email;?></th>
       <td><?php echo $user->email;?></td>

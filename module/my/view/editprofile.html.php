@@ -48,8 +48,10 @@
         <tr>
           <th class='w-90px'><?php echo $lang->user->account;?></th>
           <td style='width:33%'><?php echo html::input('account', $user->account, "class='form-control' readonly='readonly'");?></td>
+          <!-- 
           <th class='w-90px'><?php echo $lang->user->commiter;?></th>
           <td><?php echo html::input('commiter', $user->commiter, "class='form-control'");?></td>
+           -->
         </tr>
         <tr>
           <th><?php echo $lang->user->password;?></th>

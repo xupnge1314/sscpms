@@ -96,7 +96,7 @@ $lang->menu->my       = '<i class="icon-home"></i><span> 我的地盘</span>|my|
 $lang->menu->product  = $lang->productCommon . '|product|index';
 //$lang->menu->project  = $lang->projectCommon . '|project|index';
 //$lang->menu->qa       = '测试|qa|index';
-$lang->menu->doc      = '文档|doc|index';
+$lang->menu->doc      = '非常规项目库|doc|index';
 //$lang->menu->report   = '统计|report|index';
 $lang->menu->company  = '组织|company|index';
 $lang->menu->admin    = '后台|admin|index';
