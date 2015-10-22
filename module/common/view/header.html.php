@@ -13,7 +13,7 @@ include 'chosen.html.php';
     </h5>
   </div>
   <nav id='mainmenu'>
-    <?php commonModel::printMainmenu($this->moduleName); commonModel::printSearchBox();?>
+    <?php commonModel::printMainmenu($this->moduleName); //commonModel::printSearchBox();?>
   </nav>
   <nav id="modulemenu">
     <?php commonModel::printModuleMenu($this->moduleName);?>

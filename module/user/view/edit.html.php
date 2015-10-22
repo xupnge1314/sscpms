@@ -63,10 +63,12 @@
         <th><?php echo $lang->user->password2;?></th>
         <td><?php echo html::password('password2', '', "class='form-control' autocomplete='off'");?></td>
       </tr>
+      <!-- 
       <tr>
         <th><?php echo $lang->user->commiter;?></th>
         <td><?php echo html::input('commiter', $user->commiter, "class='form-control'");?></td>
       </tr>
+       -->
     </table>
     <table align='center' class='table table-form'>
       <caption class='text-left text-muted'><?php echo $lang->user->contactInfo;?></caption>

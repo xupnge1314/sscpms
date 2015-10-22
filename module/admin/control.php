@@ -16,7 +16,7 @@ class admin extends control
      * @access public
      * @return void
      */
-    public function index()
+    public function index_()
     {
         $community = zget($this->config->global, 'community');
         if(!$community or $community == 'na')
@@ -37,6 +37,11 @@ class admin extends control
         $this->view->title      = $this->lang->admin->common;
         $this->view->position[] = $this->lang->admin->index;
 		$this->display();
+    }
+    //添加  2015-09-22
+    public function index()
+    {
+        $this->locate(inlink('safe'));
     }
 
 	/**

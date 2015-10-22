@@ -44,6 +44,13 @@
       <tr>
         <th class='w-id'><?php common::printOrderLink('id', $orderBy, $vars, $lang->idAB);?></th>
         <th><?php common::printOrderLink('name', $orderBy, $vars, $lang->product->name);?></th>
+        <th class='w-80px'><?php echo $lang->product->customer;?></th>
+        <th class='w-80px'><?php echo $lang->product->project_name;?></th>
+        <th class='w-80px'><?php echo $lang->product->quote;?></th>
+        <th class='w-80px'><?php echo $lang->product->quote_time;?></th>
+        <th class='w-80px'><?php echo $lang->product->fare;?></th>
+        <th class='w-80px'><?php echo $lang->product->person;?></th>
+        <!-- 
         <th class='w-80px'><?php echo $lang->story->statusList['active']  . $lang->story->common;?></th>
         <th class='w-80px'><?php echo $lang->story->statusList['changed'] . $lang->story->common;?></th>
         <th class='w-80px'><?php echo $lang->story->statusList['draft']   . $lang->story->common;?></th>
@@ -53,6 +60,7 @@
         <th class='w-80px'><?php echo $lang->product->bugs;?></th>
         <th class='w-80px'><?php echo $lang->bug->unResolved;?></th>
         <th class='w-80px'><?php echo $lang->bug->assignToNull;?></th>
+         -->
         <?php if($canOrder):?>
         <th class='w-60px sort-default'><?php common::printOrderLink('order', $orderBy, $vars, $lang->product->updateOrder);?></th>
         <?php endif;?>
@@ -69,6 +77,13 @@
           <?php echo html::a($this->createLink('product', 'view', 'product=' . $product->id), sprintf('%03d', $product->id));?>
         </td>
         <td class='text-left' title='<?php echo $product->name?>'><?php echo html::a($this->createLink('product', 'view', 'product=' . $product->id), $product->name);?></td>
+        <td><?php echo $product->customer;?></td>
+        <td><?php echo $product->project_name;?></td>
+        <td><?php echo $product->quote;?>元</td>
+        <td><?php echo $product->quote_time;?></td>
+        <td><?php echo $lang->product->fares[$product->fare];?></td>
+        <td><?php echo $product->person;?></td>
+        <!-- 
         <td><?php echo $product->stories['active']?></td>
         <td><?php echo $product->stories['changed']?></td>
         <td><?php echo $product->stories['draft']?></td>
@@ -78,6 +93,7 @@
         <td><?php echo $product->bugs?></td>
         <td><?php echo $product->unResolved;?></td>
         <td><?php echo $product->assignToNull;?></td>
+         -->
         <?php if($canOrder):?>
         <td class='sort-handler'><i class="icon icon-move"></i></td>
         <?php endif;?>

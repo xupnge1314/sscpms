@@ -11,6 +11,13 @@
   <thead>
     <tr class='text-center'>
       <th class='w-150px text-left'><i class="icon icon-cube"></i> <?php echo $lang->product->name;?></th>
+      <th class='w-80px'><?php echo $lang->product->customer;?></th>
+        <th class='w-80px'><?php echo $lang->product->project_name;?></th>
+        <th class='w-80px'><?php echo $lang->product->quote;?></th>
+        <th class='w-80px'><?php echo $lang->product->quote_time;?></th>
+        <th class='w-80px'><?php echo $lang->product->fare;?></th>
+        <th class='w-80px'><?php echo $lang->product->person;?></th>
+      <!-- 
       <th title='<?php echo $lang->story->common;?>'><?php echo $lang->story->statusList['active'];?></th>
       <th title='<?php echo $lang->story->common;?>'><?php echo $lang->story->statusList['changed'];?></th>
       <th title='<?php echo $lang->story->common;?>'><?php echo $lang->story->statusList['draft'];?></th>
@@ -19,12 +26,20 @@
       <th><?php echo $lang->product->releases;?></th>
       <th><?php echo $lang->product->bugs;?></th>
       <th title='<?php echo $lang->bug->common;?>'><?php echo $lang->bug->unResolved;?></th>
+       -->
     </tr>
   </thead>
   <tbody>
     <?php foreach($productStats as $product):?>
     <tr class='text-center'>
       <td class='text-left'><?php echo html::a($this->createLink('product', 'browse', 'productID=' . $product->id), $product->name, '', "title='$product->name'");?></td>
+      <td><?php echo $product->customer;?></td>
+        <td><?php echo $product->project_name;?></td>
+        <td><?php echo $product->quote;?>元</td>
+        <td><?php echo $product->quote_time;?></td>
+        <td><?php echo $lang->product->fares[$product->fare];?></td>
+        <td><?php echo $product->person;?></td>
+      <!-- 
       <td><?php echo $product->stories['active']?></td>
       <td><?php echo $product->stories['changed']?></td>
       <td><?php echo $product->stories['draft']?></td>
@@ -33,6 +48,7 @@
       <td><?php echo $product->releases?></td>
       <td><?php echo $product->bugs?></td>
       <td><?php echo $product->unResolved?></td>
+       -->
     </tr>
     <?php endforeach;?>
   </tbody>
