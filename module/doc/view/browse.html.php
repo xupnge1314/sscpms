@@ -82,12 +82,12 @@ var browseType = '<?php echo $browseType;?>';
         <td class='text-left' title="<?php echo $doc->title?>"><nobr><?php echo html::a($viewLink, $doc->title);?></nobr></td>
         <td><?php echo $lang->doc->types[$doc->type];?></td>
          -->
-         <td class='text-left' title="<?php echo $doc->project_name?>"><nobr><?php echo html::a($viewLink, $doc->project_name);?></nobr></td>
-         <td class='text-left' title=""><?php echo $doc->organization?></td>
-        <td class='text-left' title=""><?php echo $doc->money?></td>
-        <td class='text-left' title=""><?php echo $doc->day?></td>
-        <td class='text-left' title=""><?php echo $doc->info?></td>
-        <td class='text-left' title=""><?php echo $doc->remark?></td>
+         <td title="<?php echo $doc->project_name?>"><nobr><?php echo html::a($viewLink, $doc->project_name);?></nobr></td>
+         <td title=""><?php echo $doc->organization?></td>
+        <td title=""><?php echo $doc->money?></td>
+        <td title=""><?php echo $doc->day?></td>
+        <td title=""><?php echo $doc->info?></td>
+        <td title=""><?php echo $doc->remark?></td>
         <td><?php isset($users[$doc->addedBy]) ? print($users[$doc->addedBy]) : print($doc->addedBy);?></td>
         <td><?php echo date("m-d H:i", strtotime($doc->addedDate));?></td>
         <!-- 

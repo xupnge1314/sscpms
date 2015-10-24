@@ -80,11 +80,11 @@
           </tr>
           <tr>
             <th><?php echo $lang->doc->money;?></th>
-            <td><?php echo $lang->doc->money;?>元</td>
+            <td><?php echo $doc->money;?>元</td>
           </tr>
           <tr>
             <th><?php echo $lang->doc->day;?></th>
-            <td><?php echo $lang->doc->day;?>天</td>
+            <td><?php echo $doc->day;?>天</td>
           </tr>
           <tr>
             <th><?php echo $lang->doc->addedBy;?></th>
