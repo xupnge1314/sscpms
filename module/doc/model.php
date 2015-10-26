@@ -63,7 +63,8 @@ class docModel extends model
     public function getLibs()
     {
         $libs = $this->dao->select('id, name')->from(TABLE_DOCLIB)->where('deleted')->eq(0)->fetchPairs();
-        return $this->lang->doc->systemLibs + $libs;
+        //return $this->lang->doc->systemLibs + $libs;
+        return  $libs;
     }
 
     /**

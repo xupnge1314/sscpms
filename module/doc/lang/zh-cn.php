@@ -69,8 +69,8 @@ $lang->doc->deleteLib      = '删除文档库';
 $lang->doc->allProduct     = '所有' . $lang->productCommon;
 $lang->doc->allProject     = '所有' . $lang->projectCommon;
 
-$lang->doc->systemLibs['product'] = $lang->productCommon . '文档库';
-$lang->doc->systemLibs['project'] = $lang->projectCommon . '文档库';
+//$lang->doc->systemLibs['product'] = $lang->productCommon . '文档库';
+//$lang->doc->systemLibs['project'] = $lang->projectCommon . '文档库';
 
 $lang->doc->types['file'] = '文件';
 $lang->doc->types['url']  = '链接';
