@@ -83,6 +83,53 @@
         <th><?php echo $lang->product->fare;?></th>
         <td><?php echo html::select('fare', $lang->product->fares, '', "class='form-control chosen'");?></td><td></td>
       </tr>
+      <!-- 新添加  2015-10-29 -->
+      <tr>
+        <th><?php echo $lang->product->reason;?></th>
+        <td><?php echo html::input('reason', '', "class='form-control'");?></td><td></td>
+      </tr>
+      <tr>
+        <th><?php echo $lang->product->cash_time;?></th>
+        <td><?php echo html::input('cash_time',date('Y-m-d'), "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->cash_time . "'");?></td><td></td>
+      </tr>
+      <tr>
+        <th><?php echo $lang->product->invoice_time;?></th>
+        <td><?php echo html::input('invoice_time',date('Y-m-d'), "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->invoice_time . "'");?></td><td></td>
+      </tr>
+      <tr>
+        <th><?php echo $lang->product->sample_time;?></th>
+        <td><?php echo html::input('sample_time',date('Y-m-d'), "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->sample_time . "'");?></td><td></td>
+      </tr>
+      <tr>
+        <th><?php echo $lang->product->report_time;?></th>
+        <td><?php echo html::input('report_time',date('Y-m-d'), "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->report_time . "'");?></td><td></td>
+      </tr>
+      <tr>
+        <th><?php echo $lang->product->send_time;?></th>
+        <td><?php echo html::input('send_time',date('Y-m-d'), "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->send_time . "'");?></td><td></td>
+      </tr>
+      <tr>
+        <th><?php echo $lang->product->package_company;?></th>
+        <td><?php echo html::input('package_company', '', "class='form-control'");?></td><td></td>
+      </tr>
+      <tr>
+        <th><?php echo $lang->product->package_money;?></th>
+        <td>
+        <div class='input-group'>
+        <?php echo html::input('package_money', '', "class='form-control'");?>
+        <span class='input-group-addon'><?php echo $lang->product->money;?></span>
+        </div>
+        </td><td></td>
+      </tr>
+      <tr>
+        <th><?php echo $lang->product->package_pay_time;?></th>
+        <td><?php echo html::input('package_pay_time',date('Y-m-d'), "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->package_pay_time . "'");?></td><td></td>
+      </tr>
+      <tr>
+        <th><?php echo $lang->product->package_invoice_time;?></th>
+        <td><?php echo html::input('package_invoice_time',date('Y-m-d'), "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->package_invoice_time . "'");?></td><td></td>
+      </tr>
+      
       <tr>
         <th><?php echo $lang->product->person;?></th>
         <td><?php echo html::input('person', '', "class='form-control'");?></td><td></td>

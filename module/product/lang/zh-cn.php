@@ -73,6 +73,16 @@ $lang->product->quote      = "报价金额";
 $lang->product->money      = "元";
 $lang->product->quote_time      = "报价时间";
 $lang->product->fare      = "目前进展";
+$lang->product->reason     = '未成交原因';
+$lang->product->cash_time     = '收款日期';
+$lang->product->invoice_time     = '开票日期';
+$lang->product->sample_time     = '收样时间';
+$lang->product->report_time     = '出报告时间';
+$lang->product->send_time     = '报告/退样/发票寄送时间';
+$lang->product->package_company     = '分包单位';
+$lang->product->package_money     = '分包金额';
+$lang->product->package_pay_time     = '分包付款日期';
+$lang->product->package_invoice_time     = '分包开票日期';
 $lang->product->person      = "负责人";
 $lang->product->files      = "附件";
 $lang->product->fares['0'] = "意向";
@@ -99,7 +109,7 @@ $lang->product->closedStory  = '已关闭';
 $lang->product->unclosed     = '未关闭';
 
 $lang->product->allStory    = '全部需求';
-$lang->product->allProduct  = '全部' . $lang->productCommon;
+//$lang->product->allProduct  = '全部' . $lang->productCommon;
 $lang->product->allProductsOfProject = '全部关联' . $lang->productCommon;
 
 $lang->product->statusList['']       = '';
