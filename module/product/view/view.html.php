@@ -87,17 +87,10 @@
             <th><?php echo $lang->product->invoice_time;?></th>
             <td><?php echo $product->invoice_time;?></td>
           </tr> 
+          <!-- 
           <tr>
             <th><?php echo $lang->product->sample_time;?></th>
             <td><?php echo $product->sample_time;?></td>
-          </tr> 
-          <tr>
-            <th><?php echo $lang->product->report_time;?></th>
-            <td><?php echo $product->report_time;?></td>
-          </tr> 
-          <tr>
-            <th><?php echo $lang->product->send_time;?></th>
-            <td><?php echo $product->send_time;?></td>
           </tr> 
           <tr>
             <th><?php echo $lang->product->package_company;?></th>
@@ -106,6 +99,15 @@
           <tr>
             <th><?php echo $lang->product->package_money;?></th>
             <td><?php echo $product->package_money;?>元</td>
+          </tr> 
+           -->
+          <tr>
+            <th><?php echo $lang->product->report_time;?></th>
+            <td><?php echo $product->report_time;?></td>
+          </tr> 
+          <tr>
+            <th><?php echo $lang->product->send_time;?></th>
+            <td><?php echo $product->send_time;?></td>
           </tr> 
           <tr>
             <th><?php echo $lang->product->package_pay_time;?></th>

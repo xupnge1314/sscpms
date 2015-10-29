@@ -93,11 +93,13 @@
         <th class='w-150px'><?php echo $lang->product->reason;?></th>
         <th class='w-70px'><?php echo $lang->product->cash_time;?></th>
         <th class='w-70px'><?php echo $lang->product->invoice_time;?></th>
+        <!-- 
         <th class='w-70px'><?php echo $lang->product->sample_time;?></th>
-        <th class='w-70px'><?php echo $lang->product->report_time;?></th>
-        <th class='w-70px'><?php echo $lang->product->send_time;?></th>
         <th class='w-150px'><?php echo $lang->product->package_company;?></th>
         <th class='w-60px'><?php echo $lang->product->package_money;?></th>
+         -->
+        <th class='w-70px'><?php echo $lang->product->report_time;?></th>
+        <th class='w-70px'><?php echo $lang->product->send_time;?></th>
         <th class='w-70px'><?php echo $lang->product->package_pay_time;?></th>
         <th class='w-70px'><?php echo $lang->product->package_invoice_time;?></th>
         <th class='w-60px'><?php echo $lang->product->person;?></th>
@@ -139,11 +141,13 @@
         <td><?php echo $product->reason;?></td>
         <td><?php echo $product->cash_time;?></td>
         <td><?php echo $product->invoice_time;?></td>
+        <!-- 
         <td><?php echo $product->sample_time;?></td>
-        <td><?php echo $product->report_time;?></td>
-        <td><?php echo $product->send_time;?></td>
         <td><?php echo $product->package_company;?></td>
         <td><?php echo $product->package_money;?>元</td>
+         -->
+        <td><?php echo $product->report_time;?></td>
+        <td><?php echo $product->send_time;?></td>
         <td><?php echo $product->package_pay_time;?></td>
         <td><?php echo $product->package_invoice_time;?></td>
         <td><?php echo $product->person;?></td>
@@ -184,7 +188,7 @@
       </tbody>
       <tfoot>
       <tr>
-        <td colspan='19'>
+        <td colspan='16'>
         <!-- 
           <div class='table-actions clearfix'>
             <?php if(count($stories)):?>

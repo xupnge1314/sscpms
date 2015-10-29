@@ -99,17 +99,10 @@
         <th><?php echo $lang->product->invoice_time;?></th>
         <td><?php echo html::input('invoice_time',$product->invoice_time, "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->invoice_time . "'");?></td><td></td>
       </tr>
+      <!-- 
       <tr>
         <th><?php echo $lang->product->sample_time;?></th>
         <td><?php echo html::input('sample_time',$product->sample_time, "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->sample_time . "'");?></td><td></td>
-      </tr>
-      <tr>
-        <th><?php echo $lang->product->report_time;?></th>
-        <td><?php echo html::input('report_time',$product->report_time, "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->report_time . "'");?></td><td></td>
-      </tr>
-      <tr>
-        <th><?php echo $lang->product->send_time;?></th>
-        <td><?php echo html::input('send_time',$product->send_time, "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->send_time . "'");?></td><td></td>
       </tr>
       <tr>
         <th><?php echo $lang->product->package_company;?></th>
@@ -123,6 +116,15 @@
         <span class='input-group-addon'><?php echo $lang->product->money;?></span>
         </div>
         </td><td></td>
+      </tr>
+       -->
+      <tr>
+        <th><?php echo $lang->product->report_time;?></th>
+        <td><?php echo html::input('report_time',$product->report_time, "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->report_time . "'");?></td><td></td>
+      </tr>
+      <tr>
+        <th><?php echo $lang->product->send_time;?></th>
+        <td><?php echo html::input('send_time',$product->send_time, "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->send_time . "'");?></td><td></td>
       </tr>
       <tr>
         <th><?php echo $lang->product->package_pay_time;?></th>
