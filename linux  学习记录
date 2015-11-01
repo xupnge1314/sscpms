@@ -1,0 +1,88 @@
+用户管理命令
+		--useradd
+		--passwd
+		--who
+		--w
+		--uptime
+		
+压缩解压命令
+		--gzip  压缩 （只能压缩文件  目录不行）   （不保留源文件）	.gz
+		--gunzip(gzip -d)   解压    
+		--tar    -c  打包				.tar
+				 -v  显示详细信息
+				 -f  指定文件名
+				 -z  打包同时压缩
+		例：tar -zcvf [打包压缩的文件名]  [需要打包的目录 ]       .tar.gz
+		--tar    -x  解包
+				 -v
+				 -f
+				 -z
+				 
+		--zip [选项  -r]	[压缩后文件名]	[文件 或目录]  （可保留源文件）
+				-r  压缩目录
+		--unzip  解压
+
+		--bzip2  [选项  -k（保留源文件）]	[文件] （gzip  升级版）
+		
+		--tar -cjvf    .tar.bz2
+		--tar -xjvf
+		
+		
+网络命令
+		--write  <用户名>    （ctrl+ D  解释）	（给指定用户写信息）
+		--wall [message]		(给当前在线的所有用户写信息)
+		--ping [选项]	[IP地址]
+				-c  ping次数
+		--ifconfig  [网卡名称]	[IP地址]   （查看和设置网卡信息）
+			例：ifconfig eth0 ip地址
+		--mail	[用户名]  （发送邮件）
+		--mail（接收邮件）    （h，d，q，help）
+		--last		（查看所有用户登陆信息）
+		--lastlog  
+				  -u
+		--traceroute
+		--netstat	[选项]
+				  -t	TCP协议
+				  -u	UDP协议
+				  -l	监听
+				  -r	路由
+				  -n	显示IP地址和端口号
+			例：netstat -tlun		查看本机监听的端口
+			    netstat -an			查看本机所有的网络连接
+				netstat -rn			查看本机路由表
+		--setup   （红帽专有）
+		--mount [-t 文件系统]	[设备文件名]	[挂载点]		（挂载命令）
+		--umount
+			例：mount -t IOS9600	/dev/sr0	/mnt/chrom
+			
+			
+关机重启命令
+		--shutdown  [选项]	[时间]
+			  -h	关机
+			  -c	取消前一个关机命令
+			  -r	重启
+		--halt	关机
+		--poweroff  关机
+		--init 0  关机
+		--reboot  重启
+		--init 6  重启
+		
+			系统运行级别
+				0	关机
+				1	单用户
+				2	不完全多用户，不含NFS服务
+				3	完全多用户
+				4	未分配
+				5	图像界面
+				6	重启
+			--runlevel 查询运行级别
+		--logout  退出登录
+				
+				
+				
+				
+				
+				
+				
+				
+				
