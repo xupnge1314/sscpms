@@ -90,16 +90,16 @@
       </tr>
       <tr>
         <th><?php echo $lang->product->cash_time;?></th>
-        <td><?php echo html::input('cash_time',date('Y-m-d'), "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->cash_time . "'");?></td><td></td>
+        <td><?php echo html::input('cash_time','', "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->cash_time . "'");?></td><td></td>
       </tr>
       <tr>
         <th><?php echo $lang->product->invoice_time;?></th>
-        <td><?php echo html::input('invoice_time',date('Y-m-d'), "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->invoice_time . "'");?></td><td></td>
+        <td><?php echo html::input('invoice_time','', "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->invoice_time . "'");?></td><td></td>
       </tr>
       <!-- 
       <tr>
         <th><?php echo $lang->product->sample_time;?></th>
-        <td><?php echo html::input('sample_time',date('Y-m-d'), "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->sample_time . "'");?></td><td></td>
+        <td><?php echo html::input('sample_time','', "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->sample_time . "'");?></td><td></td>
       </tr>
       <tr>
         <th><?php echo $lang->product->package_company;?></th>
@@ -117,19 +117,19 @@
        -->
       <tr>
         <th><?php echo $lang->product->report_time;?></th>
-        <td><?php echo html::input('report_time',date('Y-m-d'), "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->report_time . "'");?></td><td></td>
+        <td><?php echo html::input('report_time','', "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->report_time . "'");?></td><td></td>
       </tr>
       <tr>
         <th><?php echo $lang->product->send_time;?></th>
-        <td><?php echo html::input('send_time',date('Y-m-d'), "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->send_time . "'");?></td><td></td>
+        <td><?php echo html::input('send_time','', "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->send_time . "'");?></td><td></td>
       </tr>
       <tr>
         <th><?php echo $lang->product->package_pay_time;?></th>
-        <td><?php echo html::input('package_pay_time',date('Y-m-d'), "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->package_pay_time . "'");?></td><td></td>
+        <td><?php echo html::input('package_pay_time','', "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->package_pay_time . "'");?></td><td></td>
       </tr>
       <tr>
         <th><?php echo $lang->product->package_invoice_time;?></th>
-        <td><?php echo html::input('package_invoice_time',date('Y-m-d'), "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->package_invoice_time . "'");?></td><td></td>
+        <td><?php echo html::input('package_invoice_time','', "class='form-control w-100px form-date' onchange='computeWorkDays()' placeholder='" . $lang->product->package_invoice_time . "'");?></td><td></td>
       </tr>
       
       <tr>
