@@ -82,27 +82,26 @@
       <thead>
       <tr>
       <?php //$vars = "locate=no&productID=$productID&status=$status&orderBy=%s&recTotal={$pager->recTotal}&recPerPage={$pager->recPerPage}&pageID={$pager->pageID}";?>
-        <?php //$vars = "productID=$productID&browseType=$browseType&param=$moduleID&orderBy=%s&recTotal={$pager->recTotal}&recPerPage={$pager->recPerPage}&pageID={$pager->pageID}";?>
-        <?php $vars = "locate=no&productID=$productID&status=$status&orderBy=%s&recTotal={$pager->recTotal}&recPerPage={$pager->recPerPage}&pageID={$pager->pageID}";?>
+        <?php $vars = "productID=$productID&browseType=$browseType&param=$moduleID&orderBy=%s&recTotal={$pager->recTotal}&recPerPage={$pager->recPerPage}&pageID={$pager->pageID}";?>
         <th class='w-id'>  <?php common::printOrderLink('id',  $orderBy, $vars, $lang->idAB);?></th>
         <th><?php echo $lang->product->name;?></th>
-        <th class='w-200px'><?php echo $lang->product->customer;?></th>
-        <th class='w-200px'><?php echo $lang->product->project_name;?></th>
-        <th class='w-80px'><?php echo $lang->product->quote;?></th>
-        <th class='w-80px'><?php echo $lang->product->quote_time;?></th>
-        <th class='w-80px'><?php echo $lang->product->fare;?></th>
-        <th class='w-200px'><?php echo $lang->product->reason;?></th>
-        <th class='w-80px'><?php echo $lang->product->cash_time;?></th>
-        <th class='w-80px'><?php echo $lang->product->invoice_time;?></th>
+        <th class='w-150px'><?php echo $lang->product->customer;?></th>
+        <th class='w-150px'><?php echo $lang->product->project_name;?></th>
+        <th class='w-60px'><?php echo $lang->product->quote;?></th>
+        <th class='w-70px'><?php echo $lang->product->quote_time;?></th>
+        <th class='w-70px'><?php echo $lang->product->fare;?></th>
+        <th class='w-150px'><?php echo $lang->product->reason;?></th>
+        <th class='w-70px'><?php echo $lang->product->cash_time;?></th>
+        <th class='w-70px'><?php echo $lang->product->invoice_time;?></th>
         <!-- 
         <th class='w-70px'><?php echo $lang->product->sample_time;?></th>
         <th class='w-150px'><?php echo $lang->product->package_company;?></th>
         <th class='w-60px'><?php echo $lang->product->package_money;?></th>
          -->
-        <th class='w-80px'><?php echo $lang->product->report_time;?></th>
-        <th class='w-120px'><?php echo $lang->product->send_time;?></th>
-        <th class='w-100px'><?php echo $lang->product->package_pay_time;?></th>
-        <th class='w-100px'><?php echo $lang->product->package_invoice_time;?></th>
+        <th class='w-70px'><?php echo $lang->product->report_time;?></th>
+        <th class='w-70px'><?php echo $lang->product->send_time;?></th>
+        <th class='w-70px'><?php echo $lang->product->package_pay_time;?></th>
+        <th class='w-70px'><?php echo $lang->product->package_invoice_time;?></th>
         <th class='w-60px'><?php echo $lang->product->person;?></th>
         
         <!-- 
@@ -116,7 +115,7 @@
         <th>               <?php common::printOrderLink('status',     $orderBy, $vars, $lang->statusAB);?></th>
         <th>               <?php common::printOrderLink('stage',      $orderBy, $vars, $lang->story->stageAB);?></th>
          -->
-        <th class='w-100px {sorter:false}'><?php echo $lang->actions;?></th>
+        <th class='w-140px {sorter:false}'><?php echo $lang->actions;?></th>
       </tr>
       </thead>
       <tbody>

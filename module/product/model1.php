@@ -497,8 +497,6 @@ class productModel extends model
      */
     public function getStats($orderBy = 'order_desc', $pager = null, $status = 'noclosed')
     {
-        $orderBy = 'order_asc';    //添加  2015-11-08
-        //$orderBy = 'order_desc';    //添加  2015-11-08
         $this->loadModel('report');
         $this->loadModel('story');
         $this->loadModel('bug');

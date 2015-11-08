@@ -143,7 +143,6 @@ class product extends control
         //修改  2015-09-21
         /* Get product stats. */
         //$productStats = $this->product->getStats();
-        $orderBy = 'order_desc';
         $productStats = $this->product->getStats($orderBy = 'order_desc', $pager, $status='noclosed');
         
         //修改  2015-09-21
@@ -181,7 +180,6 @@ class product extends control
         $this->config->product->search['params']['module']['values']  = $this->tree->getOptionMenu($productID, $viewType = 'story', $startModuleID = 0);
         $this->loadModel('search')->setSearchParams($this->config->product->search);
 
-        $this->view->productStats = $this->product->getStats($orderBy, $pager, $status='noclosed');
         $this->view->productID     = $productID;
         $this->view->productName   = $this->products[$productID];
         $this->view->moduleID      = $moduleID;
