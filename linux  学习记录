@@ -113,10 +113,59 @@ rpm包管理	(默认rpm包安装位置   /var/lib/rpm)
 				rpm -qlp [rpm包全名]	----（查询未安装包 有可能安装位置）
 				rpm -qf [系统文件名]	----（查询系统文件属于什么包 ）
 
+用户和用户组管理
+		--useradd
+				 -u   手工指定用户的UID号
+				 -d   手工指定用户的家目录
+				 -c   手工指定用户的说明
+				 -g   手工指定用户的初始组
+				 -G   手工指定用户的附加组
+				 -s   手工指定用户的登陆shell   默认是/bin/bash
+				 例：useradd -u 666 -G root,xu -c 'readme' -d /root gaudi
+				 ### \ 标识符  --起连接作用
+				 
+				 用户默认文件：/etc/default/useradd
+				 /etc/login.defs
 				
-				
-				
-				
+		--passwd
+				 -S  查询用户密码的密码状态
+				 -l  锁定用户
+				 --stdin  使用字符串作为用户的密码      echo ’122‘ | passwd --stdin lanmp
+				 -u  解锁用户
+				 
+		--usermod   修改用户信息
+				 -u  修改已有用户uid
+				 -c  修改用户说明
+				 -G  修改附加组
+				 -g  修改用户组
+				 -L  加锁
+				 -U  解锁
+		--chage  修改用户密码状态
+				 -l  列出用户的详细密码状态
+				 -d 
+				 -m 
+				 -M
+				 -W
+				 -I
+				 -E
+		--userdel  删除用户
+				 -r  删除用户的家目录
+				 
+		--su  选项  用户名		---切换用户		（env 查看环境变量）
+				 -
+				 -c  借用其他用户身份执行命令
+				 例：su - root -c ’useradd user‘
+				 
+		--id  		查看用户ID --》uid  gid 
+		--groupadd  【选项】	组名
+				 -g  组id
+		--groupmod
+				 -n  修改组名
+				 -g  组id 
+		--groupdel  删除组
+		--gpasswd  选项   组名
+				 -a  把用户加入组
+				 -d  把用户从组中删除
 				
 				
 				
