@@ -168,10 +168,47 @@ rpm包管理	(默认rpm包安装位置   /var/lib/rpm)
 				 -d  把用户从组中删除
 				
 				
+权限管理
+	ACL权限
+		--dumpe2fs -h   查看分区是否支持ACL 权限				（df -h    查看分区信息）
+		--mount -o remount,acl/		临时开启ACL
+		--vi /etc/fstab		永久开启ACL	(挂载后面加ACL)
+		--getfacl  文件名			（查看ACL权限）
+		--setfacl  选项   文件名
+				 -m 设定ACL权限
+				 -x 删除指定的ACL权限
+				 -b 删除所有的ACL权限
+				 -d 设定默认的ACL权限
+				 -k 删除默认的ACL权限
+				 -R 递归设定ACL权限
+				例：setfacl -m u:用户名:rx(权限) 文件或目录名
+				setfacl -m g:用户组:rx(权限) 文件或目录名
+			mask	最大有效ACL权限	
+				setfacl -m m:rx(权限) 文件或目录名
+			删除ACL权限
+				setfacl -x g:用户组 文件或目录名	(删除用户组ACL权限)
+				setfacl -x u:用户名 文件或目录名	(删除用户名ACL权限)
+				setfacl -b 文件或目录名   (删除该目录下所有ACL权限)
+			递归ACL权限
+				setfacl -m u:用户名:rx(权限) -R 目录名
+			默认ACL权限
+				setfacl -m d:u:用户名:rx(权限) 目录名
+				setfacl -m d:u:用户名:rx(权限) -R 目录名
 				
-				
-				
-				
+	文件特殊权限
+		SetUID权限    -----只能给可以执行的二进制程序设置SUID权限，命令执行者要对该程序拥有x权限   ---只能针对文件
+			--chmod 4775 文件名			---4代表SUID   ---2代表SGID   ---1代表SBIT
+			--chmod u+s 文件名
+		删除SUID权限
+			--chmod 775 文件名
+			--chmod u-s 文件名
+			
+		SetGID权限	-----只能给可以执行的二进制程序设置SUID权限，命令执行者要对该程序拥有x权限   ---可以针对目录和文件
+			--chmod 2755 文件名/目录名
+			--chmod g+s  文件名/目录名
+			
+		Sticky BIT   ---只能针对目录    起粘着位作用
+			
 				
 				
 				
