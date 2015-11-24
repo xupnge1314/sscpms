@@ -228,8 +228,68 @@ rpm包管理	(默认rpm包安装位置   /var/lib/rpm)
 		 --visudo      给普通用户赋予sudo权限     man 5 sudo   su - 用户名
 		 --sudo -l   查看用户拥有sudo权限5
 		 --sudo /sbin/shutdown -r now
+		 
+		 
+文件系统管理
+	文件系统常用命令
+		-- df [-h -a -T]    查看挂载情况     ----》  针对文件系统
+		-- du [-a -h -s]    统计目录总大小     ----》高负载命令     面向文件
+		--fsck   [-a -y]    文件系统修复命令
+		--dumpe2fs          检测磁盘状态
+	 查询与自动挂载
+		-- mount [-l]    查询 
+		-- mount -a      自动挂载    ----》只针对分区      配置文件：/etc/fstab 
+		
+	 挂载命令格式
+	    --mount [-t 文件系统] [-L 卷标名] \ [-o 特殊选项] 设备文件名  挂载点
+			-t 文件系统 ：加入文件系统类型来指定挂载的类型
 		 			
+	 挂载光盘与U盘
+		挂载光盘
+		--1：建立挂载点  mkdir /mnt/cdrom
+		--2: 放入光盘
+		--3：挂载光盘  mount -t iso9660 /dev/cdrom  /mnt/cdrom           ----》 mount /dev/sr0 /mnt/cdrom
+		--4：卸载命令  umount 设备文件名或挂载点
+		
+		挂载U盘
+		--1：查看U盘设备文件名        fdisk -l    
+		--2：放入U盘
+		--3：建立挂载点  mkdir /mnt/usb
+		--4：挂载U盘   mount -t vfat /dev/sdb1   /mnt/usb
+		--5：卸载命令  umount 设备文件名或挂载点 
 				
-				
-				
+	 支持NTFS文件系统     方法：1.内核编译     2.第三方插件
+		1.下载NTFS-3G插件
+		2.上传到linux  系统
+		3.安装NTFS-3G
+			1：解压
+			2：编译器准备  && 编译配置  &&  安装 
+		4.查看U盘设备文件名        fdisk -l 
+		5.挂载移动硬盘   mount -t ntfs-3g 分区设备文件名   挂载点
+		6.卸载
+		
+		
+	 fdisk分区--分区过程
+		查看新硬盘    fdisk  -l 
+		分区    fdisk /dev/sdb 
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 				
