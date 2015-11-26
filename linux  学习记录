@@ -289,13 +289,28 @@ rpm包管理	(默认rpm包安装位置   /var/lib/rpm)
 			指定分区是否被dump备份    0  不    1  每天备份    2 不定期备份
 			指定分区是否被fsck检测    0  不    其他数字代表检测优先级
 		
+		--vi /etc/fatab  ------》写入自动挂载信息
+		--mount -a     #依赖配置文件/etc/fatab的内容，自动挂载  （用作检测写文件是否有错）
+		--报错  怎么办
+		--1.进入报错系统
+		--2.重写配置文件 /etc/fatab 
+		--3./etc/fstab文件修复
+			---mount -o remount,rw /       #重新挂载 ---给读写权限
 		
 		
+	分配swap分区
+		1.free命令   #查看内存与swap分区使用状况
+		--free 
+		--free -m 
+			cached  缓存   读
+			buffer  缓冲   写
 		
-		
-		
-		
-		
+		2.fdisk /dev/sdb    分区         增加swap分区  -->ID  是   82
+		3.格式化
+			--mkswap   /dev/sdb6
+		4.加入swap分区
+			--swapon /dev/sdb6   #加入swap分区
+			swapoff  /dev/sdb6   #取消swap分区
 		
 		
 		
