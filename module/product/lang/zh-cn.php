@@ -68,7 +68,7 @@ $lang->product->whitelist = '分组白名单';
 
 //添加  2015-09-20
 $lang->product->customer      = "客户名称";
-$lang->product->project_name      = "测试项目";
+$lang->product->project_name      = "测试机构";
 $lang->product->quote      = "报价金额";
 $lang->product->money      = "元";
 $lang->product->quote_time      = "报价时间";
