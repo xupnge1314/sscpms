@@ -272,12 +272,22 @@ rpm包管理	(默认rpm包安装位置   /var/lib/rpm)
 	 fdisk分区--分区过程
 		查看新硬盘    fdisk  -l 
 		分区    fdisk /dev/sdb 
+			-p 
+			-l 
+			
+		partprobe    重新读取分区表信息
+		mkfs -t ext4 /dev/sdb1  格式化分区
+		mkdir /disk1   建立挂载点
+		mount /dev/sdb1 /disk1    挂载 
 		
-		
-		
-		
-		
-		
+	分区自动挂载与fstab文件修复
+		1./etc/fstab   文件 
+			UUID
+			挂载点
+			文件系统名称
+			挂载参数
+			指定分区是否被dump备份    0  不    1  每天备份    2 不定期备份
+			指定分区是否被fsck检测    0  不    其他数字代表检测优先级
 		
 		
 		
