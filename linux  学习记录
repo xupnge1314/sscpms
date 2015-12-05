@@ -651,4 +651,13 @@ shell编程
 				do
 					程序
 				done
-		while循环
+		while循环-------------条件成立才执行 
+			while [条件判断式]
+				do 
+					程序
+				done
+		until循环---------条件不成立才执行
+			until [条件判断式]
+				do 
+					程序
+				done
