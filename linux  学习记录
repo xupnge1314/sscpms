@@ -661,3 +661,37 @@ shell编程
 				do 
 					程序
 				done
+				
+
+linux服务管理
+	服务简介和分类
+		1.rpm包默认安装的服务
+			a.独立的服务
+			b.基于xinetd服务
+		2.源码包安装的服务
+		
+		查询已安装的服务
+			rpm包安装的服务
+				chkconfig --list       -----查看的为自启动rpm包安装的服务
+				ps MAX     查看进程
+			源码包安装的服务
+				查看服务安装位置，一般是   /usr/local/   下 
+				rpm安装   配置文件一般放在  /etc/       启动脚本放在：/etc/rc.d/init.d 
+	rpm服务的管理
+		独立服务的管理
+			独立服务文件位置
+				/etc/init.d  启动脚本位置
+				/etc/sysconfig   初始化环境配置文件位置
+				/etc/  配置文件位置
+				/etc/xinetd.conf  xinetd配置文件
+				/etc/xinetd.d  基于xinetd服务的启动脚本
+				/var/lib     服务产生的数据放在這里
+				/var/log   日志
+			独立服务的启动      --------chkconfig  --level  2345      
+				/etc/init.d 独立服务名 start|stop|status|restart
+				service 独立服务名 start|stop|status|restart
+			独立服务的自启动
+				chkconfig  [--level 运行级别] [独立服务名] [on|off]
+				修改/etc/rc.d/rc.local 文件 
+				使用ntsysv命令管理自启动
+		基于xinetd服务的管理
