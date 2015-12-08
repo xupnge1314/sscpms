@@ -1,9 +1,27 @@
+####数据库
 
 php  缓存机制
 memcache
-redis
+redis							http://redisdoc.com/		Redis 命令参考          http://origin.redisbook.com/		Redis 设计与实现（第一版）
 mongodb
 mysql  优化
 
+####通信连接
+socket   
 
-socket
+
+####高并发  压力测试			http://www.spasvo.com   软件测试工具 - 免费软件测试工具-泽众软件测试网
+	1.loadrunner			http://www.oschina.net/question/2005757_226640   LoadRunner性能测试实战视频分享下载
+	2.avanlanch
+	3.apache ab
+	4.tcpcopy         https://github.com/session-replay-tools		http://www.spasvo.com/news/html/2014616145205.html
+	
+	
+#GridFS是一种将大型文件存储在MongoDB的文件规范
+为实现这点，该规范指定了一个将文件分块的标准。每个文件都将在文件集合对象中保存一个元数据对象，一个或多个块对象可被组合保存在一个块集合中。文件如何被分块保存的细节可以参看GridFS Specification; 大多数情况下，你无需了解此规范中细节，而可将注意力放在各个语言版本的驱动中有关GridFS API的部分或是如何使用mongofiles工具上。
+
+http://blog.csdn.net/bluishglc/article/details/6867358   Linux下搭建tomcat集群全记录
+
+http://blog.csdn.net/bluishglc/article/details/6161475/   数据库Sharding的基本思想和切分策略
+	
+	

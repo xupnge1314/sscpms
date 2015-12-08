@@ -695,3 +695,59 @@ linux服务管理
 				修改/etc/rc.d/rc.local 文件 
 				使用ntsysv命令管理自启动
 		基于xinetd服务的管理
+			安装xinetd与telnet
+				yum install xinetd 
+				yum install telnet-server
+			xinetd服务的启动
+				vi /etc/xinetd.d/telnet 
+			重启xinetd服务
+				service xinetd restart
+			xinetd服务自启动
+				chkconfig telnet on|off
+				ntsysv
+	源码包管理
+		源码包安装服务的启动
+			使用绝对路径，调用启动脚本来启动
+		源码包服务的自启动
+			vim /etc/rc.d/rc.local
+		让源码包服务被服务管理命令识别
+			在/etc/init.d  下加入源码包服务软连接
+		让源码包服务被chkconfig   ntsysv命令管理自启动  识别                           --------------netstat --ltun  
+			vim/etc/init.d/源码包服务名
+				#chkconfig： 35 86 76   #指定源码包服务脚本可以被chkconfig命令管理   格式： chkconfig：运行级别 启动顺序 关闭顺序
+				#description： ********
+			chkconfig --add 源码包服务名
+			
+linux系统管理
+	进程管理
+		进程查看
+			-- ps aux
+			-- ps -le     查看系统中所有进程
+			
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
