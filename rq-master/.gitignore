@@ -1,0 +1,12 @@
+*.pyc
+*.egg-info
+
+/dump.rdb
+/.direnv
+/.envrc
+/.tox
+/dist
+/build
+.tox
+.vagrant
+Vagrantfile
