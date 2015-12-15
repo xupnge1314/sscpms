@@ -786,13 +786,43 @@ linux系统管理
 			--chkconfig crond on|off
 		用户的crontab设置
 			--crontab [选项]
-				-e 编辑crontab定时任务
+				-e 编辑crontab定时任务                * * * * *  command（命令名称）                            --------------》 *  任何时间     ， 代表不连续时间      -   代表连续的时间     */n   代表每隔多久执行一次 
+					第一个*   代表一小时当中的第几分钟          0-59
+					第二个*   代表一天当中的第几小时            0-23
+					第三个*   代表一个月当中的第几天            1-31
+					第四个*   代表一年当中的第几个月            1-12
+					第五个*   代表一周当中的星期几              0-7
 				-l 查询crontab任务
 				-r 删除当前用户所有的crontab任务
 	
+日志管理
+	日志管理简介     ------------rsyslogd服务
+		--确定服务是否启动       ps aux | grep rsyslogd 									chkconfig --list | grep rsyslogd 
+		--常见日志的作用
+		/var/log/cron     记录系统定时任务相关的日志
+		/var/log/cups     记录打印信息的日志
+		/var/log/dmesg    记录系统再开机时内核自检信息
+		var/log/btmp      记录错误登陆的日志                              ---------用命令   lastb   查看 
+		var/log/lastlog   记录系统中所有用户最后一次登录时间的日志        ---------用命令   lastlog   查看 
+		var/log/milog     记录邮件信息
+		var/log/message   记录系统重要信息的日志
+		var/log/secure    记录验证和授权方面的信息
+		var/log/wtmp      永久记录所有用户的登陆，注销信息。同时记录系统的启动，重启，关机事件                  ---------用命令   last   查看 
+		var/run/utmp      记录当前已经登陆的用户信息                                ---------用命令   w，who，users  查看 
+	rsyslogd服务
+		日志文件格式
+			事件产生时间
+			发生事件的服务器主机
+			产生事件的服务名
+			事件的具体信息
+		/etc/rsyslog.conf配置文件
+			authpriv.*   /var/log/secure
+			服务名[连接符号]日志等级         日志记录位置
+				连接符号---------  ‘.’ 高于某一等级    '.=' 等于某一等级  '.!'  不等于某一等级
+				日志等级---------  
+				日志记录位置-----  
 	
-	
-	
+	 
 	
 	
 	

@@ -1,0 +1,16 @@
+memcached是高性能的分布式内存缓存服务器
+
+http://kb.cnblogs.com/page/42731/			memcached完全剖析–1. memcached的基础
+http://kb.cnblogs.com/page/42732/			memcached全面剖析–2. 理解memcached的内存存储
+http://kb.cnblogs.com/page/42733/			memcached全面剖析–3. memcached的删除机制和发展方向
+http://kb.cnblogs.com/page/42734/			memcached全面剖析–4. memcached的分布式算法
+http://kb.cnblogs.com/page/42735/			memcached全面剖析–5. memcached的应用和兼容程序
+
+1.memcached的特征
+	协议简单
+	基于libevent的事件处理
+	内置内存存储方式
+	memcached不互相通信的分布式
+	
+a.协议简单
+	memcached的服务器客户端通信并不使用复杂的XML等格式， 而使用简单的基于文本行的协议。因此，通过telnet 也能在memcached上保存数据、取得数据。
