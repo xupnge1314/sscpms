@@ -34,7 +34,11 @@ https://github.com/mogujie/TeamTalk     蘑菇街TeamTalk----企业办公即时通信软件
 	
 http://www.cpan.org/    	
 	
-	
+http://www.oschina.net/translate/switch-to-https-now-for-free?cmp      现在就启用 HTTPS，免费的！
+
+https://zhangge.net/4890.html			分享一个免费SSL证书申请网站，给网站开启https协议
+
+http://zyan.cc/startssl/3/1/			全球可信并且唯一免费的HTTPS(SSL)证书颁发机构：StartSSL
 	
 23种设计模式：
 
@@ -68,3 +72,20 @@ http://www.cpan.org/
     策略模式（Strategy Pattern）
     职责链模式（Chain of Responsibility）
     访问者模式（Visitor Pattern）
+	
+	
+PHP异常处理：
+	1.try      ---》  触发异常
+	2.throw    ---》  规定如何触发异常
+	3.catch    ---》  捕获异常
+	
+	
+webService三要素：
+	soap      ---》   用来描述传递信息的格式
+	WSDL      ---》   用来描述如何访问具体的接口
+	uddi      ---》   用来管理，分发，查询webService
+	
+	
+	
+	
+	
