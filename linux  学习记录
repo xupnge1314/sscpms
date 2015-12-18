@@ -841,9 +841,27 @@ linux系统管理
 				-v    显示日志轮替过程
 				-f    强制进行日志轮替
 	
+启动管理
+	运行级别
+		0    关机 
+		1    单用户模式
+		2    不完全的命令模式
+		3    完全的命令模式
+		4    
+		5    图形模式
+		6    重启 
+	runlevel     查看运行级别
+	init 运行级别     改变运行级别
+	vim /etc/inittab      系统默认运行级别
 	
-	
-	
+	 Grub 配置文件 
+		vim /boot/grub/grub.conf   
+		grub 加密  
+			--grub-md5-crypt   生成加密密码串
+			修改 vim /boot/grub/grub.conf  配置文件 
+				添加  password --md5 密码串
+		修改字符界面分辨率
+			
 	
 	
 
