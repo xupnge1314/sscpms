@@ -1,9 +1,0 @@
-/etc/fstab    
-vi /etc/fstab 
-
-
-/dev/sdb1     /disk1    ext4       default     1   2        -------》设置挂载分区文件，使系统启动时自动挂载
-
-mount   -a    查看挂载分区
-mount  -o   remount,rm/       /etc/fstab文件修复
-
