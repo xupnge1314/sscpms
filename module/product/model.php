@@ -117,7 +117,12 @@ class productModel extends model
      */
     public function getById($productID)
     {
-        return $this->dao->findById($productID)->from(TABLE_PRODUCT)->fetch();
+        $product = $this->dao->findById($productID)->from(TABLE_PRODUCT)->fetch();
+        if(!$product) return false;
+        //if($setImgSize) $doc->content = $this->loadModel('file')->setImgSize($doc->content);
+        $product->files = $this->loadModel('file')->getByObject('product', $productID);
+        return $product;
+        //return $this->dao->findById($productID)->from(TABLE_PRODUCT)->fetch();
     }
 
     /**
@@ -219,6 +224,7 @@ class productModel extends model
              ->setDefault('createdVersion', $this->config->version)
             ->join('whitelist', ',')
             ->stripTags($this->config->product->editor->create['id'], $this->config->allowedTags)
+            ->remove('files,labels')           ////添加   2015-09-21
             ->get();
         $this->dao->insert(TABLE_PRODUCT)
             ->data($product)
@@ -228,7 +234,16 @@ class productModel extends model
             ->check('code', 'unique', "deleted = '0'")
             ->exec();
 
+        //添加   2015-09-21
+        if(!dao::isError())
+        {
+            $productID = $this->dao->lastInsertID();
+            $this->loadModel('file')->saveUpload('product', $productID);
+            return array('status' => 'new', 'id' => $productID);
+        }
+        
         $productID = $this->dao->lastInsertID();
+        $this->loadModel('file')->saveUpload('product', $productID);
         $this->dao->update(TABLE_PRODUCT)->set('`order`')->eq($productID * 5)->where('id')->eq($productID)->exec();
         return $productID;
     }
@@ -248,6 +263,7 @@ class productModel extends model
             ->setIF($this->post->acl != 'custom', 'whitelist', '')
             ->join('whitelist', ',')
             ->stripTags($this->config->product->editor->edit['id'], $this->config->allowedTags)
+            ->remove('files,labels')           ////添加   2015-09-21
             ->get();
         $this->dao->update(TABLE_PRODUCT)
             ->data($product)
@@ -481,6 +497,8 @@ class productModel extends model
      */
     public function getStats($orderBy = 'order_desc', $pager = null, $status = 'noclosed')
     {
+        $orderBy = 'order_asc';    //添加  2015-11-08
+        //$orderBy = 'order_desc';    //添加  2015-11-08
         $this->loadModel('report');
         $this->loadModel('story');
         $this->loadModel('bug');

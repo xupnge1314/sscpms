@@ -139,9 +139,16 @@ class product extends control
         $this->app->loadClass('pager', $static = true);
         if($this->app->getViewType() == 'mhtml') $recPerPage = 10;
         $pager = new pager($recTotal, $recPerPage, $pageID);
-
+    
+        //修改  2015-09-21
+        /* Get product stats. */
+        //$productStats = $this->product->getStats();
+        $orderBy = 'order_desc';
+        $productStats = $this->product->getStats($orderBy = 'order_desc', $pager, $status='noclosed');
+        
+        //修改  2015-09-21
         /* Get stories. */
-        $stories = array();
+        /* $stories = array();
         if($browseType == 'unclosed')
         {
             $unclosedStatus = $this->lang->story->statusList;
@@ -160,9 +167,11 @@ class product extends control
         if($browseType == 'changedstory')$stories = $this->story->getByStatus($productID, 'changed', $sort, $pager);
         if($browseType == 'willclose')   $stories = $this->story->getWillClose($productID, $sort, $pager);
         if($browseType == 'closedstory') $stories = $this->story->getByStatus($productID, 'closed', $sort, $pager);
-
+ */
         /* Process the sql, get the conditon partion, save it to session. */
-        $this->loadModel('common')->saveQueryCondition($this->dao->get(), 'story');
+        //修改  2015-09-21
+        //$this->loadModel('common')->saveQueryCondition($this->dao->get(), 'story');
+        $this->loadModel('common')->saveQueryCondition($this->dao->get(), 'product');
 
         /* Build search form. */
         $this->config->product->search['actionURL'] = $this->createLink('product', 'browse', "productID=$productID&browseType=bySearch&queryID=myQueryID");
@@ -172,12 +181,14 @@ class product extends control
         $this->config->product->search['params']['module']['values']  = $this->tree->getOptionMenu($productID, $viewType = 'story', $startModuleID = 0);
         $this->loadModel('search')->setSearchParams($this->config->product->search);
 
+        $this->view->productStats = $this->product->getStats($orderBy, $pager, $status='noclosed');
         $this->view->productID     = $productID;
         $this->view->productName   = $this->products[$productID];
         $this->view->moduleID      = $moduleID;
-        $this->view->stories       = $stories;
+        //$this->view->stories       = $stories;
+        $this->view->productStats          =$productStats;
         $this->view->plans         = $this->loadModel('productplan')->getPairs($productID);
-        $this->view->summary       = $this->product->summary($stories);
+        //$this->view->summary       = $this->product->summary($stories);
         $this->view->moduleTree    = $this->tree->getTreeMenu($productID, $viewType = 'story', $startModuleID = 0, array('treeModel', 'createStoryLink'));
         $this->view->parentModules = $this->tree->getParents($moduleID);
         $this->view->pager         = $pager;
@@ -228,6 +239,10 @@ class product extends control
         {
             $changes = $this->product->update($productID); 
             if(dao::isError()) die(js::error(dao::getError()));
+            //
+            $files = $this->loadModel('file')->saveUpload('product', $productID);
+            if(!empty($files)) $fileAction = $this->lang->addFiles . join(',', $files) . "\n" ;
+            
             if($action == 'undelete')
             {
                 $this->loadModel('action');
@@ -240,6 +255,7 @@ class product extends control
                 $actionID = $this->loadModel('action')->create('product', $productID, 'edited');
                 $this->action->logHistory($actionID, $changes);
             }
+            
             die(js::locate(inlink('view', "product=$productID"), 'parent'));
         }
 
@@ -343,7 +359,8 @@ class product extends control
     {
         $this->product->setMenu($this->products, $productID);
 
-        $product  = $this->product->getStatByID($productID);
+        //$product  = $this->product->getStatByID($productID);
+        $product  = $this->product->getByID($productID);
         $product->desc = $this->loadModel('file')->setImgSize($product->desc);
         if(!$product) die(js::error($this->lang->notFound) . js::locate('back'));
 

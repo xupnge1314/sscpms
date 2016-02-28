@@ -55,7 +55,7 @@ $lang->product->accessDenied   = "您无权访问该{$lang->productCommon}";
 
 $lang->product->id        = '编号';
 $lang->product->company   = '所属公司';
-$lang->product->name      = "{$lang->productCommon}名称";
+$lang->product->name      = "项目名称";
 $lang->product->code      = "{$lang->productCommon}代号";
 $lang->product->order     = '排序';
 $lang->product->status    = '状态';
@@ -65,6 +65,35 @@ $lang->product->QD        = '测试负责人';
 $lang->product->RD        = '发布负责人';
 $lang->product->acl       = '访问控制';
 $lang->product->whitelist = '分组白名单';
+
+//添加  2015-09-20
+$lang->product->customer      = "客户名称";
+$lang->product->project_name      = "测试机构";
+$lang->product->quote      = "报价金额";
+$lang->product->money      = "元";
+$lang->product->quote_time      = "报价时间";
+$lang->product->fare      = "目前进展";
+$lang->product->reason     = '未成交原因';
+$lang->product->cash_time     = '收款日期';
+$lang->product->invoice_time     = '开票日期';
+$lang->product->sample_time     = '收样时间';
+$lang->product->report_time     = '出报告时间';
+$lang->product->send_time     = '报告/退样/发票寄送时间';
+$lang->product->package_company     = '分包单位';
+$lang->product->package_money     = '分包金额';
+$lang->product->package_pay_time     = '分包付款日期';
+$lang->product->package_invoice_time     = '分包开票日期';
+$lang->product->person      = "负责人";
+$lang->product->files      = "附件";
+$lang->product->fares['0'] = "意向";
+$lang->product->fares['1'] = "跟踪";
+$lang->product->fares['2'] = "报价";
+$lang->product->fares['3'] = "已知需求";
+$lang->product->fares['4'] = "下单";
+$lang->product->fares['5'] = "已收样品";
+$lang->product->fares['6'] = "测试中";
+$lang->product->fares['7'] = "已成交";
+$lang->product->fares['8'] = "未成交";
 
 $lang->product->moduleStory  = '按模块';
 $lang->product->searchStory  = '搜索';
@@ -80,7 +109,7 @@ $lang->product->closedStory  = '已关闭';
 $lang->product->unclosed     = '未关闭';
 
 $lang->product->allStory    = '全部需求';
-$lang->product->allProduct  = '全部' . $lang->productCommon;
+//$lang->product->allProduct  = '全部' . $lang->productCommon;
 $lang->product->allProductsOfProject = '全部关联' . $lang->productCommon;
 
 $lang->product->statusList['']       = '';

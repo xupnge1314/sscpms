@@ -48,16 +48,102 @@
 <div class='row-table'>
   <div class='col-main'>
     <div class='main'>
+    <fieldset>
+        <legend><?php echo $lang->product->basicInfo?></legend>
+        <table class='table table-data table-condensed table-borderless'>
+          <tr>
+            <th class='strong w-80px'><?php echo $lang->product->name;?></th>
+            <td <?php if($product->deleted) echo "class='deleted text-danger'";?>><strong><?php echo $product->name;?></strong></td>
+          </tr>  
+          <tr>
+            <th><?php echo $lang->product->customer;?></th>
+            <td><?php echo $product->customer;?></td>
+          </tr>  
+          <tr>
+            <th><?php echo $lang->product->project_name;?></th>
+            <td><?php echo $product->project_name;?></td>
+          </tr>  
+          <tr>
+            <th><?php echo $lang->product->quote;?></th>
+            <td><?php echo $product->quote;?>元</td>
+          </tr>  
+          <tr>
+            <th><?php echo $lang->product->quote_time;?></th>
+            <td><?php echo $product->quote_time;?></td>
+          </tr>  
+          <tr>
+            <th><?php echo $lang->product->fare;?></th>
+            <td class='product-<?php echo $product->fare?>'><?php echo $lang->product->fares[$product->fare];?></td>
+          </tr>  
+          <tr>
+            <th><?php echo $lang->product->reason;?></th>
+            <td><?php echo $product->reason;?></td>
+          </tr> 
+          <tr>
+            <th><?php echo $lang->product->cash_time;?></th>
+            <td><?php echo $product->cash_time;?></td>
+          </tr> 
+          <tr>
+            <th><?php echo $lang->product->invoice_time;?></th>
+            <td><?php echo $product->invoice_time;?></td>
+          </tr> 
+          <!-- 
+          <tr>
+            <th><?php echo $lang->product->sample_time;?></th>
+            <td><?php echo $product->sample_time;?></td>
+          </tr> 
+          <tr>
+            <th><?php echo $lang->product->package_company;?></th>
+            <td><?php echo $product->package_company;?></td>
+          </tr> 
+          <tr>
+            <th><?php echo $lang->product->package_money;?></th>
+            <td><?php echo $product->package_money;?>元</td>
+          </tr> 
+           -->
+          <tr>
+            <th><?php echo $lang->product->report_time;?></th>
+            <td><?php echo $product->report_time;?></td>
+          </tr> 
+          <tr>
+            <th><?php echo $lang->product->send_time;?></th>
+            <td><?php echo $product->send_time;?></td>
+          </tr> 
+          <tr>
+            <th><?php echo $lang->product->package_pay_time;?></th>
+            <td><?php echo $product->package_pay_time;?></td>
+          </tr> 
+          <tr>
+            <th><?php echo $lang->product->package_invoice_time;?></th>
+            <td><?php echo $product->package_invoice_time;?></td>
+          </tr> 
+          <tr>
+            <th><?php echo $lang->product->person;?></th>
+            <td><?php echo $product->person;?></td>
+          </tr> 
+          <tr>
+            <th><?php echo $lang->story->openedBy?></th>
+            <td><?php echo $users[$product->createdBy];?></td>
+          </tr>  
+          <tr>
+            <th><?php echo $lang->story->openedDate?></th>
+            <td><?php echo $product->createdDate;?></td>
+          </tr>  
+        </table>
+      </fieldset>
+      <!-- 
       <fieldset>
         <legend><?php echo $lang->product->desc;?></legend>
         <div class='article-content'><?php echo $product->desc;?></div>
       </fieldset>
-      <?php include '../../common/view/action.html.php';?>
+       -->
+      <?php echo $this->fetch('file', 'printFiles', array('files' => $product->files, 'fieldset' => 'true'));?>
       <div class='actions'><?php if(!$product->deleted) echo $actionLinks;?></div>
     </div>
   </div>
   <div class='col-side'>
     <div class='main main-side'>
+    <!-- 
       <fieldset>
         <legend><?php echo $lang->product->basicInfo?></legend>
         <table class='table table-data table-condensed table-borderless'>
@@ -157,6 +243,8 @@
           </tr>
         </table>
       </fieldset>
+       -->
+      <?php include '../../common/view/action.html.php';?>
     </div>
   </div>
 </div>

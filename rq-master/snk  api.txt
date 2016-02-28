@@ -1,0 +1,97 @@
+
+获取广告识别id
+http://yapi.yilianfy.com/?key=e74dadfe3ac5262d28e196809eaec395&c=ad_show&m=getLocid&id=53
+请求方式：get /post
+请求参数
+
+参数：
+id //广告位ID 整形 必填
+返回数据说明：
+{
+    "status": 1,
+    "message": "success",
+    "list": {
+        "loc_id": "684_282c07bf7d7e9e63e6d2bce70a3425c5"
+    }
+}
+
+
+
+获取广告信息
+http://yapi.yilianfy.com/?key=e74dadfe3ac5262d28e196809eaec395&c=ad_show&m=getAd&idfa=&loc_id=&uid=
+请求方式：get /post
+请求参数
+
+参数：
+idfa //IDFA 整形 必填
+loc_id //广告识别ID 整形 必填
+uid //用户ID 整形 必填
+返回数据说明：
+{
+    "status": 1,
+    "message": "success",
+    "list": null
+}
+
+
+广告曝光
+http://yapi.yilianfy.com/?key=e74dadfe3ac5262d28e196809eaec395&c=ad_show&m=reportShowAd&idfa=&loc_id=&uid=&mtr_id=
+请求方式：get /post
+请求参数
+
+参数：
+idfa //IDFA 整形 必填
+loc_id //广告识别ID 整形 必填
+uid //用户ID 整形 必填
+mtr_id //素材ID 整形 必填
+返回数据说明：
+{
+    "status": 1,
+    "message": "success"
+}
+
+
+
+广告点击
+http://yapi.yilianfy.com/?key=e74dadfe3ac5262d28e196809eaec395&c=ad_show&m=clickAd&idfa=&loc_id=&uid=&mtr_id=
+请求方式：get /post
+请求参数
+
+参数：
+
+idfa //IDFA 整形 必填
+loc_id //广告识别ID 整形 必填
+uid //用户ID 整形 必填
+mtr_id //素材ID 整形 必填
+
+
+
+└─└─└─充值上传任务 	开启 	335 	0-22-335 	recharge/index 	2015-09-24 17:27:48 		添加 编辑 删除
+307 	└─└─└─└─充值任务设置idfa 	开启 	303 	0-22-150-303 	setting_recharge_idfa/index 	2015-09-24 17:29:20 		添加 编辑 删除
+306 	└─└─└─└─充值任务推送消息 	开启 	303 	0-22-150-303 	recharge/push 	2015-09-24 17:28:57 		添加 编辑 删除
+305 	└─└─└─└─充值任务删除字段 	开启 	303 	0-22-150-303 	recharge/del 	2015-09-24 17:28:39 		添加 编辑 删除
+304 	└─└─└─└─充值任务添加字段 	开启 	303 	0-22-150-303 	recharge/add
+
+
+
+
+└─└─└─充值上传信息 	开启 	335 	0-22-335 	recharge_task/index 	2015-09-24 21:04:15 		添加 编辑 删除
+313 	└─└─└─└─充值任务信息导出 	开启 	308 	0-22-173-308 	recharge_task/export_data 	2015-09-24 21:10:03 		添加 编辑 删除
+312 	└─└─└─└─充值任务信息拒绝 	开启 	308 	0-22-173-308 	recharge_task/edit 	2015-09-24 21:08:20 		添加 编辑 删除
+311 	└─└─└─└─充值任务信息打款 	开启 	308 	0-22-173-308 	recharge_task/successV2 	2015-09-24 21:07:46 		添加 编辑 删除
+310 	└─└─└─└─充值任务信息复核 	开启 	308 	0-22-173-308 	recharge_task/successV1 	2015-09-24 21:07:10 		添加 编辑 删除
+309 	└─└─└─└─充值任务信息初审 	开启 	308 	0-22-173-308 	recharge_task/successV
+
+
+
+
+
+http://yapi.yilianfy.com/index.php?key=e74dadfe3ac5262d28e196809eaec395&c=task&m=apps_download&uid=MDAwMDAwMDAwMIHejat_tm2j&id=20&idfa=195EC6DB-A5BC-486F-AE78-1F819869B3F9&ip=120.128.34.232
+
+
+
+
+
+
+
+

@@ -1,0 +1,98 @@
+####数据库
+
+php  缓存机制
+memcache
+redis							http://redisdoc.com/		Redis 命令参考          http://origin.redisbook.com/		Redis 设计与实现（第一版）
+mongodb
+mysql  优化
+
+####通信连接
+socket   
+
+
+####高并发  压力测试			http://www.spasvo.com   软件测试工具 - 免费软件测试工具-泽众软件测试网
+	1.loadrunner			http://www.oschina.net/question/2005757_226640   LoadRunner性能测试实战视频分享下载
+	2.avanlanch
+	3.apache ab
+	4.tcpcopy         https://github.com/session-replay-tools		http://www.spasvo.com/news/html/2014616145205.html
+	
+	
+#GridFS是一种将大型文件存储在MongoDB的文件规范
+为实现这点，该规范指定了一个将文件分块的标准。每个文件都将在文件集合对象中保存一个元数据对象，一个或多个块对象可被组合保存在一个块集合中。文件如何被分块保存的细节可以参看GridFS Specification; 大多数情况下，你无需了解此规范中细节，而可将注意力放在各个语言版本的驱动中有关GridFS API的部分或是如何使用mongofiles工具上。
+
+http://blog.csdn.net/bluishglc/article/details/6867358   Linux下搭建tomcat集群全记录
+
+http://blog.csdn.net/bluishglc/article/details/6161475/   数据库Sharding的基本思想和切分策略
+	
+http://www.haojson.com/postjson/			在线模拟POST请求提交JSON数据 - HaoJson	
+
+https://github.com/Akagi201				python
+
+http://mp.weixin.qq.com/s?__biz=MjM5MTQzNzU2NA==&mid=401209346&idx=1&sn=a4dacfdd59b237832af9e2f1fb148a50&scene=23&srcid=1210u7w5qpfGngSC54DM38S2#rd 			亲测，手把手教你用Python抢票
+	
+https://github.com/mogujie/TeamTalk     蘑菇街TeamTalk----企业办公即时通信软件
+	
+http://www.cpan.org/    	
+	
+http://www.oschina.net/translate/switch-to-https-now-for-free?cmp      现在就启用 HTTPS，免费的！
+
+https://zhangge.net/4890.html			分享一个免费SSL证书申请网站，给网站开启https协议
+
+http://zyan.cc/startssl/3/1/			全球可信并且唯一免费的HTTPS(SSL)证书颁发机构：StartSSL
+
+http://www.csdn.net/article/2015-09-22/2825768			架构之路（一）：目标
+
+http://apx.ui.avazutracking.net/   广告平台
+	
+23种设计模式：
+
+一、创建型模式
+
+    单件模式（Single Pattern）
+    抽象工厂模式（Abstract Factory）
+    建造者模式（Builder Pattern）
+    工厂方法（Factory Method）
+    原型模式（Protype Pattern）
+
+
+二、结构型模式
+    适配器模式（Adapter Pattern）
+    桥接模式（Bridge Pattern）
+    装饰模式（Decorator Pattern）
+    组合模式（Composite Pattern）
+    外观模式（Fa?ade Pattern）
+    享元模式（Flyweight Pattern）
+    代理模式（Proxy Pattern） 
+
+三、行为型模式
+    模版方法模式（Template Method）
+    命令模式（Command Pattern）
+    迭代器模式（Iterator Pattern）
+    观察者模式（Oberver Pattern）
+    中介者模式（Mediator Pattern）
+    备忘录模式（Memento Pattern）
+    解释器模式（Interpreter Pattern）
+    状态模式（State Pattern）
+    策略模式（Strategy Pattern）
+    职责链模式（Chain of Responsibility）
+    访问者模式（Visitor Pattern）
+	
+	
+PHP异常处理：
+	1.try      ---》  触发异常
+	2.throw    ---》  规定如何触发异常
+	3.catch    ---》  捕获异常
+	
+	
+webService三要素：
+	soap      ---》   用来描述传递信息的格式
+	WSDL      ---》   用来描述如何访问具体的接口
+	uddi      ---》   用来管理，分发，查询webService
+	
+	
+换新版客户端，旧账号可以用
+捷玛网址： http://120.24.12.211
+安卓手机客户端：http://120.24.12.211/app/jm.apk 
+电脑客户端：http://120.24.12.211/soft/JM.rar
+	
+	
