@@ -16,6 +16,7 @@
  <div class="wrap mb">
   <div id="pageLeft"> {include file="inc/download_tree.tpl"} </div>
   <div id="pageIn"> {include file="inc/ur_here.tpl"}
+
     <!--
    <div id="downloadList"> 
     <!-- {foreach from=$download_list name=download_list name=download item=download} --> 
@@ -33,7 +34,7 @@
   <form name="action" method="post" action="download.php">
     <div align='center' style="margin:10px">
           <p style="padding:10px"> {$lang.sign}:
-            <input type="text" name="title" value="" size="50" style="height:30px" class="inpMain" /></p>
+            <input type="text" name="sign" value="" size="50" style="height:30px" class="inpMain" /></p>
 
           <p style="padding:10px"><input name="submit" class="btn" type="submit" value="{$lang.btn_submit}" /></p>
     </div>

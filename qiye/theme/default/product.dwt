@@ -16,7 +16,9 @@
   <div id="pageLeft"> {include file="inc/product_tree.tpl"} </div>
   <div id="pageIn"> {include file="inc/ur_here.tpl"}
    <div id="product">
+    <!--
     <div class="productImg"><a href="{$product.image}" target="_blank"><img src="{$product.image}" width="300" /></a></div>
+    -->
     <div class="productInfo">
      <h1>{$product.name}</h1>
      <ul>

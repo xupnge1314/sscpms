@@ -16,10 +16,21 @@
  <div class="wrap mb">
   <div id="pageLeft"> {include file="inc/download_tree.tpl"} </div>
   <div id="pageIn"> {include file="inc/ur_here.tpl"}
+
    <div id="download">
+
+
+    <dl>
+     <dt><a href="{$download.image}">{$download.title}</a></dt>
+     <dd>{$lang.add_time}：{$download.add_time} {$lang.click}：{$download.click} {$lang.look}：{$download.image} </dd>
+    </dl>
+
+
+   <!--
     <!-- {if $download.image} -->
     <div class="img"><a href="{$download.image}" target="_blank"><img src="{$download.image}" width="280" /></a></div>
     <!-- {/if} -->
+
     <div class="info">
      <h1>{$download.title}</h1>
      <ul>
@@ -32,6 +43,7 @@
      </ul>
      <a href="{$download.download_link}" class="btn" target="_blank">{$lang.download_link}</a>
     </div>
+
     <div class="clear"></div>
     <div class="content">
      <h3>{$lang.download_content}</h3>
@@ -39,7 +51,13 @@
       {$download.content}
      </ul>
     </div>
+    -->
+
+
+
+
    </div>
+
   </div>
   <div class="clear"></div>
  </div>

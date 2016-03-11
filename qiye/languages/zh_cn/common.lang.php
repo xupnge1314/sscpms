@@ -17,6 +17,10 @@ $_LANG['ur_here'] = '当前位置';
 $_LANG['home'] = '首页';
 $_LANG['add_time'] = '发布时间';
 $_LANG['click'] = '点击数';
+
+$_LANG['look'] = '查看';
+$_LANG['sign'] = '唯一验证编码';
+
 $_LANG['price'] = '价格';
 $_LANG['price_format'] = '￥d% 元';
 $_LANG['price_discuss'] = '面议';
@@ -32,6 +36,9 @@ $_LANG['captcha'] = '验证码';
 $_LANG['captcha_wrong'] = '验证码错误或者为空！';
 $_LANG['captcha_refresh'] = '看不清？点击更换另一个验证码。';
 $_LANG['page_wrong'] = '页面不存在！';
+
+$_LANG['sign_wrong'] = '唯一验证编码错误，请修改后重新尝试！';
+
 $_LANG['illegal'] = '操作有误';
 $_LANG['go_top'] = '返回顶部';
 $_LANG['dou_pc'] = '电脑版';
