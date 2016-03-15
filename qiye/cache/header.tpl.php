@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2016-02-14 09:38:01
+<?php /* Smarty version 2.6.26, created on 2016-01-26 18:32:51
          compiled from inc/header.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'inc/header.tpl', 38, false),)), $this); ?>
@@ -57,7 +57,7 @@ smarty_core_load_plugins(array('plugins' => array(array('modifier', 'escape', 'i
  <div class="wrap clearfix">
   <ul class="logo">
    <a href="<?php echo $this->_tpl_vars['site']['root_url']; ?>
-"><img src="http://localhost/qiye/theme/default/images/<?php echo $this->_tpl_vars['site']['site_logo']; ?>
+"><img src="http://192.168.10.10/test/theme/default/images/<?php echo $this->_tpl_vars['site']['site_logo']; ?>
 " alt="<?php echo $this->_tpl_vars['site']['site_name']; ?>
 " title="<?php echo $this->_tpl_vars['site']['site_name']; ?>
 " /></a>

@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.26, created on 2016-02-14 09:38:01
+<?php /* Smarty version 2.6.26, created on 2016-01-26 18:32:51
          compiled from index.dwt */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -11,10 +11,10 @@
 <meta name="generator" content="DouPHP v1.3" />
 <title><?php echo $this->_tpl_vars['page_title']; ?>
 </title>
-<link href="http://localhost/qiye/theme/default/style.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="http://localhost/qiye/theme/default/images/jquery.min.js"></script>
-<script type="text/javascript" src="http://localhost/qiye/theme/default/images/global.js"></script>
-<script type="text/javascript" src="http://localhost/qiye/theme/default/images/slide_show.js"></script>
+<link href="http://192.168.10.10/test/theme/default/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://192.168.10.10/test/theme/default/images/jquery.min.js"></script>
+<script type="text/javascript" src="http://192.168.10.10/test/theme/default/images/global.js"></script>
+<script type="text/javascript" src="http://192.168.10.10/test/theme/default/images/slide_show.js"></script>
 </head>
 <body>
 <div id="wrapper"> <?php $_smarty_tpl_vars = $this->_tpl_vars;

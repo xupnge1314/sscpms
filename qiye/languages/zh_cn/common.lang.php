@@ -19,7 +19,7 @@ $_LANG['add_time'] = '发布时间';
 $_LANG['click'] = '点击数';
 
 $_LANG['look'] = '查看';
-$_LANG['sign'] = '唯一验证编码';
+$_LANG['sign'] = '查询码';
 
 $_LANG['price'] = '价格';
 $_LANG['price_format'] = '￥d% 元';

@@ -152,9 +152,9 @@ elseif ($rec == 'insert') {
         
     // CSRF防御令牌验证
     $firewall->check_token($_POST['token'], 'download_add');
-    
+    $sign = md5($_POST[sign]);
     //$sql = "INSERT INTO " . $dou->table('download') . " (id, cat_id, title, defined, content, image, download_link, size ,keywords, add_time, description)" . " VALUES (NULL, '$_POST[cat_id]', '$_POST[title]', '$_POST[defined]', '$_POST[content]', '$file', '$_POST[download_link]', '$_POST[size]', '$_POST[keywords]', '$add_time', '$_POST[description]','$_POST[sign]')";
-    $sql = "INSERT INTO " . $dou->table('download') . "( cat_id, title,  image, download_link, add_time,sign)" . " VALUES ( '$_POST[cat_id]', '$_POST[title]', '$file', '$link','$add_time', '$_POST[sign]')";
+    $sql = "INSERT INTO " . $dou->table('download') . "( cat_id, title,  image, download_link, add_time,sign)" . " VALUES ( '$_POST[cat_id]', '$_POST[title]', '$file', '$link','$add_time', '$sign')";
     $dou->query($sql);
     
     $dou->create_admin_log($_LANG['download_add'] . ': ' . $_POST['title']);
@@ -223,8 +223,8 @@ elseif ($rec == 'update') {
     
     // CSRF防御令牌验证
     $firewall->check_token($_POST['token'], 'download_edit');
-    
-    $sql = "UPDATE " . $dou->table('download') . " SET cat_id = '$_POST[cat_id]', title = '$_POST[title]', defined = '$_POST[defined]' ,content = '$_POST[content]'" . $up_file . ", download_link = '$_POST[download_link]', size = '$_POST[size]', keywords = '$_POST[keywords]', description = '$_POST[description]' WHERE id = '$_POST[id]'";
+    $sign = md5($_POST[sign]);
+    $sql = "UPDATE " . $dou->table('download') . " SET cat_id = '$_POST[cat_id]', title = '$_POST[title]', defined = '$_POST[defined]' ,content = '$_POST[content]'" . $up_file . ", download_link = '$_POST[download_link]', size = '$_POST[size]', keywords = '$_POST[keywords]', description = '$_POST[description]', sign = '$sign' WHERE id = '$_POST[id]'";
     $dou->query($sql);
     
     $dou->create_admin_log($_LANG['download_edit'] . ': ' . $_POST['title']);

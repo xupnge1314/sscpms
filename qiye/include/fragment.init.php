@@ -9,18 +9,27 @@
  * 授权协议：http://www.douco.com/license.html
  * --------------------------------------------------------------------------------------------------
  * Author: DouCo
- * Release Date: 2015-06-10
+ * Release Date: 2015-10-16
  */
+if (!defined('IN_DOUCO')) {
+    die('Hacking attempt');
+}
 
-// 下载中心
-$_LANG['download_category'] = '报告查询';
-$_LANG['download_tree'] = '报告分类';
-$_LANG['download_news'] = '新闻中心';
-$_LANG['download_more'] = '查看更多下载';
-$_LANG['download_previous'] = '上一篇';
-$_LANG['download_next'] = '下一篇';
-$_LANG['download_link'] = '下载链接';
-$_LANG['download_size'] = '文件大小';
-$_LANG['download_content'] = '下载描述';
+/* 获取碎片列表 */
+$sql = "SELECT * FROM " . $dou->table('fragment') . " ORDER BY sort DESC, id DESC";
+$query = $dou->query($sql);
 
+while ($row = $dou->fetch_array($query)) {
+    $image = $row['image'] ? ROOT_URL . $row['image'] : '';
+    
+    $fragment[$row['mark']] = array (
+            "name" => $row['fragment_name'],
+            "image" => $image,
+            "text" => $row['text'],
+            "link" => $row['link']
+    );
+}
+
+// 赋值给模板
+$smarty->assign('fragment', $fragment);
 ?>

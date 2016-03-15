@@ -1,5 +1,5 @@
-<?php /* Smarty version 2.6.26, created on 2016-01-26 18:33:00
-         compiled from download_category.dwt */ ?>
+<?php /* Smarty version 2.6.26, created on 2016-01-26 18:33:11
+         compiled from page.dwt */ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -12,7 +12,6 @@
 <title><?php echo $this->_tpl_vars['page_title']; ?>
 </title>
 <link href="http://192.168.10.10/test/theme/default/style.css" rel="stylesheet" type="text/css" />
-<link href="http://192.168.10.10/test/theme/default/download.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="http://192.168.10.10/test/theme/default/images/jquery.min.js"></script>
 <script type="text/javascript" src="http://192.168.10.10/test/theme/default/images/global.js"></script>
 </head>
@@ -24,7 +23,7 @@ unset($_smarty_tpl_vars);
  ?>
  <div class="wrap mb">
   <div id="pageLeft"> <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "inc/download_tree.tpl", 'smarty_include_vars' => array()));
+$this->_smarty_include(array('smarty_include_tpl_file' => "inc/page_tree.tpl", 'smarty_include_vars' => array()));
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?> </div>
@@ -33,29 +32,13 @@ $this->_smarty_include(array('smarty_include_tpl_file' => "inc/ur_here.tpl", 'sm
 $this->_tpl_vars = $_smarty_tpl_vars;
 unset($_smarty_tpl_vars);
  ?>
-   <div id="downloadList"> 
-    <?php $_from = $this->_tpl_vars['download_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }$this->_foreach['download'] = array('total' => count($_from), 'iteration' => 0);
-if ($this->_foreach['download']['total'] > 0):
-    foreach ($_from as $this->_tpl_vars['download']):
-        $this->_foreach['download']['iteration']++;
-?> 
-    <dl<?php if ($this->_foreach['download']['iteration'] % 4 == 0): ?> class="last"<?php endif; ?>>
-     <dt><a href="<?php echo $this->_tpl_vars['download']['url']; ?>
-"><?php echo $this->_tpl_vars['download']['title']; ?>
-</a></dt>
-     <dd><?php echo $this->_tpl_vars['lang']['add_time']; ?>
-：<?php echo $this->_tpl_vars['download']['add_time']; ?>
- <?php echo $this->_tpl_vars['lang']['click']; ?>
-：<?php echo $this->_tpl_vars['download']['click']; ?>
-</dd>
-    </dl>
-    <?php endforeach; endif; unset($_from); ?> 
+   <div id="page">
+    <h1><?php echo $this->_tpl_vars['page']['page_name']; ?>
+</h1>
+    <div class="content"> <?php echo $this->_tpl_vars['page']['content']; ?>
+ </div>
    </div>
-   <?php $_smarty_tpl_vars = $this->_tpl_vars;
-$this->_smarty_include(array('smarty_include_tpl_file' => "inc/pager.tpl", 'smarty_include_vars' => array()));
-$this->_tpl_vars = $_smarty_tpl_vars;
-unset($_smarty_tpl_vars);
- ?> </div>
+  </div>
   <div class="clear"></div>
  </div>
  <?php $_smarty_tpl_vars = $this->_tpl_vars;

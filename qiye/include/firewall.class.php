@@ -195,5 +195,25 @@ class Firewall {
         
         return $legal_id;
     }
+
+    /**
+     * +----------------------------------------------------------
+     * 验证合法的sign 获取合法的栏目ID
+     * +----------------------------------------------------------
+     * $module 模块名称及数据表名
+     * $sign 分类ID或者栏目ID
+     *
+     * +----------------------------------------------------------
+     */
+    function get_legal_sign($module, $sign = '' ) {
+
+        if ( !isset($sign) )
+            return -1;
+
+        $sign = md5($sign);
+        $id = $GLOBALS['dou']->get_one("SELECT id FROM " . $GLOBALS['dou']->table($module) . " WHERE sign = '$sign'");
+        $id = $id ? $id : -1 ;
+        return $id ;
+    }
 }
 ?>

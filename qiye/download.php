@@ -18,16 +18,17 @@ require (dirname(__FILE__) . '/include/init.php');
 // 验证并获取合法的ID，如果不合法将其设定为-1
 //$id = $firewall->get_legal_id('download', $_REQUEST['id'], $_REQUEST['unique_id']);
 
-$sid = $firewall->get_legal_sign('download', $_REQUEST['sign']);
-if ($sid == -1)
+$id = $firewall->get_legal_sign('download', $_REQUEST['sign']);
+if ($id == -1)
     $dou->dou_msg($GLOBALS['_LANG']['sign_wrong'], ROOT_URL);
-
-$id = $firewall->get_legal_id('download', $sid, '');
+//echo $sid.'<br>';exit;
+/*$id = $firewall->get_legal_id('download', $sid, '');
 $cat_id = $dou->get_one("SELECT cat_id FROM " . $dou->table('download') . " WHERE id = '$id'");
 $parent_id = $dou->get_one("SELECT parent_id FROM " . $dou->table('download_category') . " WHERE cat_id = '" . $cat_id . "'");
+echo $id;
 if ($id == -1)
     $dou->dou_msg($GLOBALS['_LANG']['page_wrong'], ROOT_URL);
-    
+ */
 /* 获取详细信息 */
 $query = $dou->select($dou->table('download'), '*', '`id` = \'' . $id . '\'');
 $download = $dou->fetch_array($query);
